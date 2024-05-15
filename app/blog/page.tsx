@@ -1,4 +1,4 @@
-// import { BlogPosts } from 'app/components/posts'
+import { BlogPosts } from 'app/components/posts'
 
 export const metadata = {
   title: 'Blog',
@@ -10,7 +10,7 @@ export default function Page() {
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
       <p className='text-lg leading-relaxed my-4'>大家好啊，今天给大家看点想看的东西</p>
-      {/* <BlogPosts /> */}
+      <BlogPosts />
     </section>
   )
 }
