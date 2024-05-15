@@ -1,7 +1,7 @@
 
 export const metadata = {
-    title: 'Blog',
-    description: 'Read my blog.',
+    title: 'Photo',
+    description: 'This is my photo',
 }
 
 export default function Page() {
