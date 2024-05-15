@@ -10,7 +10,7 @@ export default function Page() {
         {`个人简介`}
       </p>
       <div className="my-8">
-        <BlogPosts />
+        {/* <BlogPosts /> */}
       </div>
       <div className='my-8'>
         {/* Education */}
