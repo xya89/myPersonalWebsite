@@ -2,10 +2,11 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
+import { Navbar, Education, Experience, Projects } from './components/nav'
+
+// import { Analytics } from '@vercel/analytics/react'
+// import { SpeedInsights } from '@vercel/speed-insights/next'
+// import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
@@ -55,10 +56,13 @@ export default function RootLayout({
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
+          {/* <Education />
+          <Experience />
+          <Projects /> */}
           {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+          {/* <Footer /> */}
+          {/* <Analytics />
+          <SpeedInsights /> */}
         </main>
       </body>
     </html>
