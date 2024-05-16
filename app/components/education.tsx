@@ -8,6 +8,7 @@ export function Education() {
             location: 'Burnaby, BC',
             summary: 'Minor in Statistics \n hounor',
             image: '/Education/SFU_image.jpg',
+            slug: 'https://www.sfu.ca/',
         },
         {
             school: 'Shenzhen Senior High School',
@@ -16,6 +17,7 @@ export function Education() {
             location: 'Shenzhen, Guangdong',
             summary: 'best year of my life looooooonnnnnnnnng ass descriptions',
             image: '/Education/shenzhen_senior_high_school_img.jpeg',
+            slug: 'https://www.cn-school.com/main/index.html'
         },
     ];
 
@@ -43,7 +45,9 @@ export function Education() {
                             <div className={`p-6 flex flex-col justify-between ${edu.image ? 'md:w-1/2' : 'w-full'}`}>
                                 {/* School Name */}
                                 <h1 className="font-bond text-2xl text-center mb-2">
-                                    {edu.school}
+                                    <a href={edu.slug}>
+                                        {edu.school}
+                                    </a>
                                 </h1>
                                 {/* Education Achievment */}
                                 <p className="text-sm text-sky-400 text-center mb-4">
