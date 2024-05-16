@@ -6,16 +6,16 @@ export function Education() {
             title: 'Bachelor of Science in Data Science',
             year: '2018 - 2023',
             location: 'Burnaby, BC',
-            summary: 'Minor in Statistics',
-            image: '',
+            summary: 'Minor in Statistics \n hounor',
+            image: '/Education/SFU_image.jpg',
         },
         {
             school: 'Shenzhen Senior High School',
             title: 'High school diploma',
             year: '2016 - 2018',
             location: 'Shenzhen, Guangdong',
-            summary: 'best year of my life',
-            image: null,
+            summary: 'best year of my life looooooonnnnnnnnng ass descriptions',
+            image: '/Education/shenzhen_senior_high_school_img.jpeg',
         },
     ];
 
@@ -25,24 +25,40 @@ export function Education() {
             <div className="containter lg mx-auto space-y-6">
                 {educationData.map((edu, index) => (
                     // Card view for each education experience
-                    <div key={index} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md break-all">
+                    <div key={index} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row md:h-64 max-w-lg mx-auto md:max-w-4xl">
                         {/* Image of the school */}
                         {edu.image && (
-                            <img src={edu.image} alt={edu.school} className="w-1/4 h-auto object-cover" />
+                            <div className="w-full md:w-1/2 h-32 md:h-full">
+                                <img
+                                    src={edu.image}
+                                    alt={edu.school}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
                         )}
                         {/* School Info */}
-                        <div className={`p-6 ${edu.image ? 'w-3/4' : 'w-full'}`}>
+                        <div className={`p-6 flex flex-col justify-between ${edu.image ? 'md:w-3/4' : 'w-full'}`}>
                             {/* School Name */}
-                            <h1>{edu.school}</h1>
+                            <h1 className="font-bond text-2xl text-center mb-2">
+                                {edu.school}
+                            </h1>
                             {/* Education Achievment */}
-                            <p>{edu.title}</p>
+                            <p className="text-sm text-sky-400 text-center mb-4">
+                                {edu.title}
+                            </p>
                             {/* time and location */}
-                            <div>
-                                <p>{edu.year}</p>
-                                <p>{edu.location}</p>
+                            <div className="flex justify-between items-center text-sm mb-2">
+                                <p className="text-neutral-600 dark:text-neutral-400">
+                                    {edu.year}
+                                </p>
+                                <p className="text-neutral-600 dark:text-neutral-400">
+                                    {edu.location}
+                                </p>
                             </div>
                             {/* Summary */}
-                            <p>{edu.summary}</p>
+                            <p className="text-base text-gray-700 dark:text-gray-300 overflow-ellipsis truncate">
+                                {edu.summary}
+                            </p>
                         </div>
 
                     </div>
