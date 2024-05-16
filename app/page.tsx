@@ -15,10 +15,16 @@ export default function Page() {
       </div>
       <div className='my-8'>
         {/* Education */}
-        <Education />
+        <section className='flex justify-center flex-col items-center'>
+          <h2 className='font-bond text-2xl text-left mb-2'>Education</h2>
+          <Education />
+        </section>
       </div>
       <div className='my-8'>
         {/* Experience */}
+        <section className='flex justify-center flex-col items-center'>
+
+        </section>
       </div>
       <div className='my-8'>
         {/* Projects */}

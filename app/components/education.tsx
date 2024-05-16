@@ -26,39 +26,43 @@ export function Education() {
                 {educationData.map((edu, index) => (
                     // Card view for each education experience
                     <div key={index} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row md:h-64 max-w-lg mx-auto md:max-w-4xl">
-                        {/* Image of the school */}
-                        {edu.image && (
-                            <div className="w-full md:w-1/2 h-32 md:h-full">
-                                <img
-                                    src={edu.image}
-                                    alt={edu.school}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        )}
-                        {/* School Info */}
-                        <div className={`p-6 flex flex-col justify-between ${edu.image ? 'md:w-3/4' : 'w-full'}`}>
-                            {/* School Name */}
-                            <h1 className="font-bond text-2xl text-center mb-2">
-                                {edu.school}
-                            </h1>
-                            {/* Education Achievment */}
-                            <p className="text-sm text-sky-400 text-center mb-4">
-                                {edu.title}
-                            </p>
-                            {/* time and location */}
-                            <div className="flex justify-between items-center text-sm mb-2">
-                                <p className="text-neutral-600 dark:text-neutral-400">
-                                    {edu.year}
+                        <div className="p-6 flex flex-col md:flex-row">
+                            {/* Image of the school */}
+                            {edu.image && (
+                                <div className="w-full md:w-1/3 md:pr-6 flex-shrink-0">
+                                    <div className="relative pb-3/4 md:pb-0 md:h-full">
+                                        <img
+                                            src={edu.image}
+                                            alt={edu.school}
+                                            className="absolute inset-0 w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                            {/* School Info */}
+                            <div className={`p-6 flex flex-col justify-between ${edu.image ? 'md:w-1/2' : 'w-full'}`}>
+                                {/* School Name */}
+                                <h1 className="font-bond text-2xl text-center mb-2">
+                                    {edu.school}
+                                </h1>
+                                {/* Education Achievment */}
+                                <p className="text-sm text-sky-400 text-center mb-4">
+                                    {edu.title}
                                 </p>
-                                <p className="text-neutral-600 dark:text-neutral-400">
-                                    {edu.location}
+                                {/* time and location */}
+                                <div className="flex justify-between items-center text-sm mb-2">
+                                    <p className="text-neutral-600 dark:text-neutral-400">
+                                        {edu.year}
+                                    </p>
+                                    <p className="text-neutral-600 dark:text-neutral-400">
+                                        {edu.location}
+                                    </p>
+                                </div>
+                                {/* Summary */}
+                                <p className="text-base text-gray-700 dark:text-gray-300 overflow-ellipsis truncate">
+                                    {edu.summary}
                                 </p>
                             </div>
-                            {/* Summary */}
-                            <p className="text-base text-gray-700 dark:text-gray-300 overflow-ellipsis truncate">
-                                {edu.summary}
-                            </p>
                         </div>
 
                     </div>
