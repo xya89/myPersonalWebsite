@@ -1,5 +1,6 @@
 import { BlogPosts } from 'app/components/posts'
 import { Education } from './components/education'
+import { Experience } from './components/experience'
 
 export default function Page() {
   return (
@@ -23,7 +24,8 @@ export default function Page() {
       <div className='my-8'>
         {/* Experience */}
         <section className='flex justify-center flex-col items-center'>
-
+          <h2>Experience</h2>
+          <Experience />
         </section>
       </div>
       <div className='my-8'>

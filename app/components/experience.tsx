@@ -49,7 +49,44 @@ export function Experience() {
             <div>
                 {experienceData.map((exp, index) => (
                     <div>
-
+                        <div>
+                            {exp.image && (
+                                <div>
+                                    <div>
+                                        <img
+                                            src={exp.image}
+                                            alt={exp.orgName}
+                                            className=""
+                                        />
+                                    </div>
+                                </div>
+                            )}
+                            {/* Experience Info */}
+                            <div>
+                                {/* Title */}
+                                <h1>
+                                    {exp.title}
+                                </h1>
+                                {/* Organization Name */}
+                                <p>
+                                    {exp.orgName}
+                                </p>
+                                {/* Duration */}
+                                {/* Location */}
+                                <div>
+                                    <p>
+                                        {exp.duration}
+                                    </p>
+                                    <p>
+                                        {exp.location}
+                                    </p>
+                                </div>
+                                {/* Summary */}
+                                <p>
+                                    {exp.summary}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
