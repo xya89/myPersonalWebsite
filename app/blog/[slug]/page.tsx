@@ -58,46 +58,49 @@ export default function Blog({ params }) {
 
   return (
     <section className='flex justify-center'>
-      <div className='bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden'>
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'BlogPosting',
-              headline: post.metadata.title,
-              datePublished: post.metadata.publishedAt,
-              dateModified: post.metadata.publishedAt,
-              description: post.metadata.summary,
-              image: post.metadata.image
-                ? `${baseUrl}${post.metadata.image}`
-                : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-              url: `${baseUrl}/blog/${post.slug}`,
-              author: {
-                '@type': 'Person',
-                name: 'My Portfolio',
-              },
-            }),
-          }}
-        />
-        {post.metadata.image && (<img
-          src={post.metadata.image}
-          alt={post.metadata.title}
-          className='w-full h-64 object-cover' />
-        )}
-        <div className="p-6">
-          <h1 className="title font-semibold text-2xl tracking-tighter">
-            {post.metadata.title}
-          </h1>
-          <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              {formatDate(post.metadata.publishedAt)}
-            </p>
+      <div className='container lg mx-auto'>
+        <div className='bg-white dark:bg-neutral-800 rounded-lg shadow-md break-all'>
+          <script
+            type="application/ld+json"
+            suppressHydrationWarning
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'BlogPosting',
+                headline: post.metadata.title,
+                datePublished: post.metadata.publishedAt,
+                dateModified: post.metadata.publishedAt,
+                description: post.metadata.summary,
+                image: post.metadata.image
+                  ? `${baseUrl}${post.metadata.image}`
+                  : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+                url: `${baseUrl}/blog/${post.slug}`,
+                author: {
+                  '@type': 'Person',
+                  name: 'My Portfolio',
+                },
+              }),
+            }}
+          />
+          {post.metadata.image && (<img
+            src={post.metadata.image}
+            alt={post.metadata.title}
+            className='w-full h-64 object-cover' />
+          )}
+          <div className="p-6">
+            <h1 className="title font-semibold text-2xl tracking-tighter">
+              {post.metadata.title}
+            </h1>
+            <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                {formatDate(post.metadata.publishedAt)}
+              </p>
+            </div>
+            <article className="prose">
+              <CustomMDX source={post.content} />
+            </article>
           </div>
-          <article className="prose dark:prose-dark max-w-none">
-            <CustomMDX source={post.content} />
-          </article>
+
         </div>
 
       </div>
