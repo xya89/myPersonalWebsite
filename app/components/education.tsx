@@ -30,17 +30,19 @@ export function Education() {
                     <div key={index} className="">
                         <div className="">
                             {/* Image of the school */}
-                            {edu.image && (
-                                <div className="">
+                            <a href={edu.slug}>
+                                {edu.image && (
                                     <div className="">
-                                        <img
-                                            src={edu.image}
-                                            alt={edu.school}
-                                            className=""
-                                        />
+                                        <div className="">
+                                            <img
+                                                src={edu.image}
+                                                alt={edu.school}
+                                                className=""
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
+                            </a>
                             {/* School Info */}
                             <div>
                                 {/* School Name */}

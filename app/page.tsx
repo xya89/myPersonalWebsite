@@ -17,7 +17,8 @@ export default function Page() {
         About
       </h1>
       <p className="mb-4">
-        {`个人简介`}
+        {/* Introduction */}
+        没想好写什么捏😋
       </p>
       <div className="my-8">
         {/* <BlogPosts /> */}

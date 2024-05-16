@@ -8,7 +8,7 @@ export function Experience() {
             location: 'Richmond, BC',
             summary: 'Supply Chain Analyst, Data Analyst, SQL',
             image: '/Experience/Norsat.webp',
-            slug: null,
+            slug: 'https://www.norsat.com/pages/about-us',
         }, {
             title: 'Data Analyst (capstone project)',
             orgName: 'Vancouver General Hospital x SFU',
@@ -16,7 +16,7 @@ export function Experience() {
             location: 'Vancouver, BC',
             summary: 'Canine for Care project',
             image: '/Experience/VGH.avif',
-            slug: null,
+            slug: 'https://www.vch.ca/en/service/canines-care',
         }, {
             title: 'Undergraduate research',
             orgName: 'Simon Fraser University',
@@ -24,7 +24,7 @@ export function Experience() {
             location: 'Burnaby, BC',
             summary: 'Steam Server Load Prediction',
             image: '/Experience/SFU_science_building.jpg',
-            slug: null,
+            slug: 'https://github.com/xya89/TimeSeries-Steam-server-usage-forecast',
         }, {
             title: 'Undergraduate research',
             orgName: 'Simon Fraser University',
@@ -32,7 +32,7 @@ export function Experience() {
             location: 'Buranby, BC',
             summary: 'Hongkong Vaccine Hackathon',
             image: '/Experience/SFU_wmc.jpg',
-            slug: null,
+            slug: 'https://github.com/xya89/Revision-of-Vaccination-Distribution-in-Hong-Kong---Hackathon-2022',
         }, {
             title: 'Student',
             orgName: 'Simon Fraser University',
@@ -40,7 +40,7 @@ export function Experience() {
             location: 'Buranby, BC',
             summary: 'Android App...',
             image: '/Experience/SFU_as_building.jpg',
-            slug: null,
+            slug: 'https://github.com/xya89/Android_Apps_CMPT276',
         }
     ]
 
@@ -53,11 +53,13 @@ export function Experience() {
                             {exp.image && (
                                 <div>
                                     <div>
-                                        <img
-                                            src={exp.image}
-                                            alt={exp.orgName}
-                                            className=""
-                                        />
+                                        <a href={exp.slug}>
+                                            <img
+                                                src={exp.image}
+                                                alt={exp.orgName}
+                                                className=""
+                                            />
+                                        </a>
                                     </div>
                                 </div>
                             )}
