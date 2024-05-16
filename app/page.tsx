@@ -1,6 +1,7 @@
 import { BlogPosts } from 'app/components/posts'
 import { Education } from './components/education'
 import { Experience } from './components/experience'
+import Footer from './components/footer'
 
 export default function Page() {
   return (
@@ -43,6 +44,10 @@ export default function Page() {
       </div>
       <div className='my-8'>
         {/* Projects */}
+      </div>
+      <div>
+        {/* footer */}
+        <Footer />
       </div>
     </section>
   )
