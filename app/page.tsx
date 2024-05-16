@@ -1,4 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
+import { Education } from './components/education'
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       </div>
       <div className='my-8'>
         {/* Education */}
+        <Education />
       </div>
       <div className='my-8'>
         {/* Experience */}
