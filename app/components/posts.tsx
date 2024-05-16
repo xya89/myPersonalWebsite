@@ -30,7 +30,7 @@ export function BlogPosts() {
                 <h2 className="font-semibold text-xl text-neutral-900 dark:text-neutral-100 mb-2 w-full">
                   {post.metadata.title}
                 </h2>
-                <p className="text-base text-gray-700 dark:text-gray-300 mb-4 w-full line-clamp-10">
+                <p className="text-base text-gray-700 dark:text-gray-300 mb-4 w-full truncate">
                   {post.metadata.summary}
                 </p>
                 <p className="text-blue-500 hover:underline w-full">Read more</p>
