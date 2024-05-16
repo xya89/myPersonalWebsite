@@ -57,7 +57,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section>
+    <section className='flex justify-center'>
       <div className='bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden'>
         <script
           type="application/ld+json"
@@ -81,6 +81,11 @@ export default function Blog({ params }) {
             }),
           }}
         />
+        {post.metadata.image && (<img
+          src={post.metadata.image}
+          alt={post.metadata.title}
+          className='w-full h-64 object-cover' />
+        )}
         <div className="p-6">
           <h1 className="title font-semibold text-2xl tracking-tighter">
             {post.metadata.title}
@@ -90,7 +95,7 @@ export default function Blog({ params }) {
               {formatDate(post.metadata.publishedAt)}
             </p>
           </div>
-          <article className="prose">
+          <article className="prose dark:prose-dark max-w-none">
             <CustomMDX source={post.content} />
           </article>
         </div>
