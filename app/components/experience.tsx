@@ -45,8 +45,8 @@ export function Experience() {
     ]
 
     return (
-        <section>
-            <div>
+        <section className="flex justify-center">
+            <div className="containter lg mx-auto space-y-6">
                 {experienceData.map((exp, index) => (
                     <div>
                         <div>

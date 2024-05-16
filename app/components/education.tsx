@@ -68,7 +68,6 @@ export function Education() {
                                 </p>
                             </div>
                         </div>
-
                     </div>
                 ))}
             </div>
