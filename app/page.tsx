@@ -1,8 +1,6 @@
 'use client'
-import { BlogPosts } from 'app/components/posts'
 import { Education } from './components/education'
 import { Experience } from './components/experience'
-import Footer from './components/footer'
 
 export default function Page() {
   return (
@@ -16,8 +14,8 @@ export default function Page() {
           onContextMenu={(e) => e.preventDefault()}
         />
       </div>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        About
+      <h1 className="mb-8 mt-8 text-2xl font-semibold tracking-tighter">
+        你好
       </h1>
       <p className="mb-4">
         {/* Introduction */}

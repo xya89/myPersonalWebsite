@@ -55,25 +55,27 @@ export function Education() {
             title: ['Bachelor of Science, Data Science', 'Minor Statistics'],
             year: '2018 - 2023',
             location: 'Burnaby, BC',
-            summary: 'Minor in Statistics \n hounor',
-            image: '/Education/SFU_image.jpg',
+            summary: 'These courses are proved to be helpful:, Applied Discrete Data Analysis, Multivariate Analysis, Time Series Analysis',
+            image: '/Education/school_image/SFU_image.webp',
             slug: 'https://www.sfu.ca/',
+            quickIdentifier: 'UD',
         },
         {
             school: 'Shenzhen Senior High School',
             title: 'High school diploma',
             year: '2016 - 2018',
             location: 'Shenzhen, Guangdong',
-            summary: 'best year of my life loooooooooooooooooooooooooooooooooooonng ass descriptions',
-            image: '/Education/shenzhen_senior_high_school_img.jpeg',
-            slug: 'https://www.cn-school.com/main/index.html'
+            summary: '\"It was the best of times, it was the worst of times\"',
+            image: '/Education/school_image/SID_image.png',
+            slug: 'https://www.cn-school.com/main/index.html',
+            quickIdentifier: 'HS',
         },
     ];
 
 
     return (
-        <section className='flex justify-center'>
-            <div className="containter lg mx-auto space-y-6 justify-center">
+        <section className=' flex flex-row justify-center w-full'>
+            <div className="containter lg:mx-auto space-y-6 justify-center w-full">
                 {educationData.map((edu, index) => (
                     // Card view for each education experience
                     <div key={index} className="flex flex-col bg-white dark:bg-neutral-800 lg:flex-row shawdow-md rounded-lg overflow-hidden">
@@ -84,8 +86,8 @@ export function Education() {
                                     <img
                                         src={edu.image}
                                         alt={edu.school}
-                                        className="w-full h-auto object-cover"
-                                        style={{ aspectRatio: '4/3', width: '100%', maxHeight: '300px' }}
+                                        className="w-full h-full object-cover"
+                                        style={{ aspectRatio: '3/2', width: '100%', height: '100%', maxHeight: '300px' }}
 
                                     />
                                 </div>
@@ -94,13 +96,13 @@ export function Education() {
                         {/* School Info */}
                         <div className="lg:w-1/2 w-full p-4 flex flex-col justify-between">
                             {/* School Name */}
-                            <h2 className="text-center font-bold text-xl mb-2 hover:text-red-400">
+                            <h2 className="text-center font-bold text-2xl mb-2 lg:mb-0 lg:mt-0 hover:text-red-400">
                                 <a href={edu.slug}>
                                     {edu.school}
                                 </a>
                             </h2>
                             {/* Education Achievment */}
-                            <div className="text-sky-500 text-center mb-4 text-sm">
+                            <div className="text-sky-500 text-center mb-2 lg:mb-0 text-sm">
                                 {Array.isArray(edu.title) ? (
                                     edu.title.map((title, idx) => (
                                         <p key={idx}>{title}</p>
@@ -121,8 +123,12 @@ export function Education() {
                                 </p>
                             </div>
                             {/* Summary */}
-                            <p className="overflow-hidden text-gray-300 truncate">
-                                {edu.summary}
+                            <p className="overflow-hidden text-neutral-400 truncate text-center">
+                                <ul>
+                                    {edu.summary.split(',').map((line, idx) => (
+                                        <li key={idx}>{line}</li>
+                                    ))}
+                                </ul>
                             </p>
                         </div>
                     </div>
