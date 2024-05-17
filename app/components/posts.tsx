@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 
+//TODO: add tagging features
+
 export function BlogPosts() {
   let allBlogs = getBlogPosts()
 
