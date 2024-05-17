@@ -63,7 +63,7 @@ export function Experience() {
                                     <div className="h-full border-1-2 border-gray-300"></div>
                                 )}
                             </div>
-                            <p className="text-sm lg:text-center">{exp.duration.split(' ')[0]}</p>
+                            <p className="text-sm lg:text-center">{exp.duration.split('-')[0]}</p>
                         </div>
                         {/* Experience Info */}
                         <div className="lg:w-1/2 p-4 flex flex-col justify-between lg:pr-8">

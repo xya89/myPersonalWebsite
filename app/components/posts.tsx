@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image';
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 
 //TODO: add tagging features
@@ -18,13 +19,21 @@ export function BlogPosts() {
         .map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
             <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden w-full">
-              {post.metadata.image && (
-                <img
-                  src={post.metadata.image}
-                  alt={post.metadata.title}
-                  className="w-full h-48 object-cover"
-                />
-              )}
+              <div className='w-full h-48 object-cover relative'>
+                {post.metadata.image && (
+                  // <img
+                  //   src={post.metadata.image}
+                  //   alt={post.metadata.title}
+                  //   className="w-full h-48 object-cover"
+                  // />
+                  <Image
+                    src={post.metadata.image}
+                    alt={post.metadata.title}
+                    fill={true}
+                    style={{ aspectRatio: '9/16', objectFit: "cover" }}
+                  />
+                )}
+              </div>
               <div className="p-6 w-full">
                 <p className="text-neutral-600 dark:text-neutral-400 mb-2 w-full">
                   {formatDate(post.metadata.publishedAt, false)}
