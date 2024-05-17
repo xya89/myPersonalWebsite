@@ -21,11 +21,6 @@ export function BlogPosts() {
             <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden w-full">
               <div className='w-full h-48 object-cover relative'>
                 {post.metadata.image && (
-                  // <img
-                  //   src={post.metadata.image}
-                  //   alt={post.metadata.title}
-                  //   className="w-full h-48 object-cover"
-                  // />
                   <Image
                     src={post.metadata.image}
                     alt={post.metadata.title}
