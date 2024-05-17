@@ -19,7 +19,7 @@ const navItems = {
 
 }
 
-export function Navbar({ darkMode, toggleDarkMode }) {
+export function Navbar() {
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
@@ -39,14 +39,6 @@ export function Navbar({ darkMode, toggleDarkMode }) {
                 </Link>
               )
             })}
-
-            <button
-              className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
-              onClick={toggleDarkMode}
-            >
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
-
           </div>
         </nav>
       </div>
