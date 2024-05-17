@@ -17,7 +17,7 @@ export function Education() {
         },
         {
             school: 'Shenzhen Senior High School',
-            title: 'High school diploma',
+            title: 'High School Diploma',
             year: '2016 - 2018',
             location: 'Shenzhen, Guangdong',
             summary: '\"It was the best of times, it was the worst of times\"',
@@ -52,11 +52,11 @@ export function Education() {
                         {/* School Info */}
                         <div className="lg:w-1/2 w-full p-4 flex flex-col justify-between">
                             {/* School Name */}
-                            <h2 className="text-center font-bold text-2xl mb-2 lg:mb-0 lg:mt-0 hover:text-red-400">
+                            <h1 className="text-center font-bold text-2xl mb-2 lg:mb-0 lg:mt-0 hover:text-red-400">
                                 <a href={edu.slug}>
                                     {edu.school}
                                 </a>
-                            </h2>
+                            </h1>
                             {/* Education Achievment */}
                             <div className="text-sky-500 text-center mb-2 lg:mb-0 text-sm">
                                 {Array.isArray(edu.title) ? (
@@ -79,13 +79,13 @@ export function Education() {
                                 </p>
                             </div>
                             {/* Summary */}
-                            <p className="overflow-hidden text-neutral-400 truncate text-center">
+                            <div className="overflow-hidden text-neutral-400 truncate text-center">
                                 <ul>
                                     {edu.summary.split(',').map((line, idx) => (
                                         <li key={idx}>{line}</li>
                                     ))}
                                 </ul>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 ))}

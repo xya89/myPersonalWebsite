@@ -72,12 +72,12 @@ export function Experience() {
                                 {exp.title}
                             </h1>
                             {/* Organization Name */}
-                            <p>
+                            <p className="text-gray-600 mb-1">
                                 {exp.orgName}
                             </p>
                             {/* Duration */}
                             {/* Location */}
-                            <div>
+                            <div className="flex justify-between text-gray-500 mb-2">
                                 <p>
                                     {exp.duration}
                                 </p>
@@ -86,7 +86,7 @@ export function Experience() {
                                 </p>
                             </div>
                             {/* Summary */}
-                            <div>
+                            <div className="text-gray-700">
                                 {exp.summary}
                             </div>
                         </div>
