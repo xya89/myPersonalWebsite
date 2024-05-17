@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image"
 
 // some icons used in this component
 function CalendarIcon() {
@@ -83,12 +84,13 @@ export function Education() {
                         <a href={edu.slug} className="w-full lg:w-1/2">
                             {edu.image && (
                                 <div className="">
-                                    <img
+                                    <Image
                                         src={edu.image}
                                         alt={edu.school}
+                                        width={300}
+                                        height={200}
                                         className="w-full h-full object-cover"
                                         style={{ aspectRatio: '3/2', width: '100%', height: '100%', maxHeight: '300px' }}
-
                                     />
                                 </div>
                             )}

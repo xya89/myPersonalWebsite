@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function Experience() {
 
     const experienceData = [
@@ -45,50 +47,49 @@ export function Experience() {
     ]
 
     return (
-        <section className="flex justify-center">
-            <div className="containter lg mx-auto space-y-6">
+        <section className="flex flex-row justify-center w-full">
+            <div className="containter lg:mx-auto space-y-6 justify-center w-full">
                 {experienceData.map((exp, index) => (
-                    <div>
-                        <div>
+                    // Card view for each experience item
+                    <div key={index} className="flex flex-col lg:flex-row overflow-hidden">
+                        <a href={exp.slug} className="w-full lg:w-1/2">
                             {exp.image && (
                                 <div>
-                                    <div>
-                                        <a href={exp.slug}>
-                                            <img
-                                                src={exp.image}
-                                                alt={exp.orgName}
-                                                className=""
-                                                style={{ aspectRatio: `4/3` }}
-                                            />
-                                        </a>
-                                    </div>
+                                    <Image
+                                        src={exp.image}
+                                        alt={exp.title}
+                                        width={300}
+                                        height={300}
+                                        style={{ aspectRatio: '3/2', width: '100%', height: '100%', maxHeight: '300px' }}
+                                    />
                                 </div>
                             )}
-                            {/* Experience Info */}
-                            <div className="">
-                                {/* Title */}
-                                <h1>
-                                    {exp.title}
-                                </h1>
-                                {/* Organization Name */}
+
+                        </a>
+                        {/* Experience Info */}
+                        <div className="">
+                            {/* Title */}
+                            <h1>
+                                {exp.title}
+                            </h1>
+                            {/* Organization Name */}
+                            <p>
+                                {exp.orgName}
+                            </p>
+                            {/* Duration */}
+                            {/* Location */}
+                            <div>
                                 <p>
-                                    {exp.orgName}
+                                    {exp.duration}
                                 </p>
-                                {/* Duration */}
-                                {/* Location */}
-                                <div>
-                                    <p>
-                                        {exp.duration}
-                                    </p>
-                                    <p>
-                                        {exp.location}
-                                    </p>
-                                </div>
-                                {/* Summary */}
                                 <p>
-                                    {exp.summary}
+                                    {exp.location}
                                 </p>
                             </div>
+                            {/* Summary */}
+                            <p>
+                                {exp.summary}
+                            </p>
                         </div>
                     </div>
                 ))}
