@@ -58,13 +58,14 @@ export function Experience() {
                                                 src={exp.image}
                                                 alt={exp.orgName}
                                                 className=""
+                                                style={{ aspectRatio: `4/3` }}
                                             />
                                         </a>
                                     </div>
                                 </div>
                             )}
                             {/* Experience Info */}
-                            <div>
+                            <div className="">
                                 {/* Title */}
                                 <h1>
                                     {exp.title}

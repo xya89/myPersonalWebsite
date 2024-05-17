@@ -29,10 +29,11 @@ export default function Page() {
       <div className='my-8'>
         {/* Education */}
         <section className='flex justify-center flex-col items-center'>
-          <h2 className='font-bond text-2xl text-left mb-2'>
+          <h1 className='font-bond text-2xl text-left mb-2'>
             Education
-          </h2>
+          </h1>
           <Education />
+          <hr className='border-t-2 border-gray-700 my-4' />
         </section>
       </div>
       <div className='my-8'>
