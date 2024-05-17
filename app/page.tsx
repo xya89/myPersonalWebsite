@@ -1,3 +1,4 @@
+'use client'
 import { BlogPosts } from 'app/components/posts'
 import { Education } from './components/education'
 import { Experience } from './components/experience'
@@ -12,6 +13,7 @@ export default function Page() {
           src="/profile/profile_pic_2.jpg"
           alt='Headshot'
           className='w-full h-full object-cover'
+          onContextMenu={(e) => e.preventDefault()}
         />
       </div>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
