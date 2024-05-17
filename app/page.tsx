@@ -2,6 +2,9 @@
 import { Education } from './components/education'
 import { Experience } from './components/experience'
 
+// TODO: get a CMS and fetch image effectively, 
+// dont use static website tho!!!!
+
 export default function Page() {
   return (
     <section>
