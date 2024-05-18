@@ -3,7 +3,7 @@ import experienceData from 'app/data/experienceData.json'
 
 export function Experience() {
 
-    const yearsWihMostRecentProjects = {};
+    const yearsWihMostRecentProjects: { [key: string]: any } = {};
     experienceData.forEach((exp) => {
         const year = exp.duration.split('-')[0].trim();
         if (!yearsWihMostRecentProjects[year]) {
@@ -11,25 +11,37 @@ export function Experience() {
         }
     })
 
+    // Extract years and group experiences by year
+    const experienceByYear = experienceData.reduce((acc: { [key: string]: any[] }, exp) => {
+        const year = exp.duration.split('-')[0].trim();
+        if (!acc[year]) {
+            acc[year] = [];
+        }
+        acc[year].push(exp);
+        return acc;
+    }, {});
 
     return (
         <section className="flex flex-row justify-center w-full">
             <div className="containter lg:mx-auto space-y-6 justify-center w-full">
+
                 {experienceData.map((exp, index) => {
                     const year = exp.duration.split('-')[0].trim();
                     const isMostRecentProject = yearsWihMostRecentProjects[year] === exp;
-
-
+                    const isNotFirstInYear = experienceByYear[year].indexOf(exp) !== 0;
                     return (
                         // Card view for each experience item
-                        <div key={index} className="flex flex-col lg:flex-row overflow-hidden">
+                        <div key={index} className="flex flex-col lg:flex-row overflow-hidden w-full">
                             {/* Timeline */}
-                            <div className="w-1/12 flex flex-col items-center">
+                            <div className="w-1/8 flex flex-col items-center">
                                 {isMostRecentProject && (
                                     <>
-                                        <div className="text-lg font-bold">{year}</div>
-                                        <div className="h-full w-px bg-gray-300"></div>
+                                        <div className="text-lg font-bold flex-shrink">{year}</div>
+                                        <div className="flex-1 w-px bg-gray-300"></div>
                                     </>
+                                )}
+                                {isNotFirstInYear && (
+                                    < div className='flex-1 w-px bg-gray-300'></div>
                                 )}
                             </div>
                             {/* Experience Info */}
@@ -77,6 +89,6 @@ export function Experience() {
 
                 })}
             </div>
-        </section>
+        </section >
     )
 }
