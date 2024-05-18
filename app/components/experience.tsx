@@ -32,7 +32,9 @@ export function Experience() {
                     const isNotFirstInYear = experienceByYear[year].indexOf(exp) !== 0;
                     return (
                         // Card view for each experience item
-                        <div key={index} className="flex flex-col lg:flex-row overflow-hidden rounded-lg w-full">
+                        <div key={index}
+                            className="flex flex-col lg:flex-row overflow-hidden rounded-lg w-full
+                            transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150">
                             {/* Timeline */}
                             <div className="w-1/8 flex flex-col items-center">
                                 {isMostRecentProject && (

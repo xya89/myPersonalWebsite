@@ -24,31 +24,27 @@ export default function Page() {
         {/* Introduction */}
         没想好写什么捏😋
       </p>
-      <div className="my-8">
-        {/* <BlogPosts /> */}
-      </div>
-      <div className='my-8'>
+      {/* Information Container */}
+      <section className='divide-y divide-neutral-400 my-4 snap-start'>
         {/* Education */}
-        <section className='flex justify-center flex-col items-center'>
-          <h1 className='font-bond text-2xl text-left mb-2'>
+        <div className='my-8 flex justify-center flex-col'>
+          <h1 className='font-bond text-3xl text-left mb-4 mt-4'>
             Education
           </h1>
           <Education />
-          <hr className='border-t-2 border-gray-700 my-4' />
-        </section>
-      </div>
-      <div className='my-8'>
+        </div>
         {/* Experience */}
-        <section className='flex justify-center flex-col items-center'>
-          <h2 className='font-bond text-2xl text-left mb-2'>
+        <div className='my-8 flex justify-center flex-col'>
+          <h1 className='font-bond text-3xl text-left mb-4 mt-4'>
             Experience
-          </h2>
+          </h1>
           <Experience />
-        </section>
-      </div>
-      <div className='my-8'>
-        {/* Projects */}
-      </div>
+        </div>
+        <div className='my-8 flex justify-center flex-col'>
+          {/* Projects */}
+        </div>
+      </section>
+
     </section>
   )
 }
