@@ -1,6 +1,7 @@
 'use client'
 import { Education } from './components/education'
 import { Experience } from './components/experience'
+import Image from 'next/image'
 
 // TODO: get a CMS and fetch image effectively, 
 // dont use static website tho!!!!
@@ -9,13 +10,12 @@ export default function Page() {
   return (
     <section>
       {/* Headshot photo */}
-      <div className='w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8'>
-        <img
-          src="/profile/profile_pic_2.jpg"
+      <div className='w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative'>
+        <Image
+          src={"/profile/profile_pic_5.jpg"}
           alt='Headshot'
-          className='w-full h-full object-cover'
-          onContextMenu={(e) => e.preventDefault()}
-        />
+          fill={true}
+          style={{ aspectRatio: '1/1', objectFit: "cover" }} />
       </div>
       <h1 className="mb-8 mt-8 text-2xl font-semibold tracking-tighter">
         你好

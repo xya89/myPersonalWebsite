@@ -9,7 +9,7 @@ export function Education() {
             <div className="containter lg:mx-auto space-y-6 justify-center w-full">
                 {educationData.map((edu, index) => (
                     // Card view for each education experience
-                    <div key={index} className="flex flex-col bg-white dark:bg-neutral-800 lg:flex-row shawdow-md rounded-lg overflow-hidden">
+                    <div key={index} className="flex flex-col lg:flex-row shawdow-md rounded-lg overflow-hidden w-full">
                         {/* Image of the school */}
                         <a href={edu.slug} className="w-full lg:w-1/2">
                             {edu.image && (

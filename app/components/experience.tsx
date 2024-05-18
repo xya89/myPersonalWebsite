@@ -1,5 +1,6 @@
 import Image from "next/image"
 import experienceData from 'app/data/experienceData.json'
+import { CalendarHero, LocationIcon } from "public/icon";
 
 export function Experience() {
 
@@ -23,7 +24,7 @@ export function Experience() {
 
     return (
         <section className="flex flex-row justify-center w-full">
-            <div className="containter lg:mx-auto space-y-6 justify-center w-full">
+            <div className="containter lg:mx-auto space-y-6 justify-center w-full ">
 
                 {experienceData.map((exp, index) => {
                     const year = exp.duration.split('-')[0].trim();
@@ -31,7 +32,7 @@ export function Experience() {
                     const isNotFirstInYear = experienceByYear[year].indexOf(exp) !== 0;
                     return (
                         // Card view for each experience item
-                        <div key={index} className="flex flex-col lg:flex-row overflow-hidden w-full">
+                        <div key={index} className="flex flex-col lg:flex-row overflow-hidden rounded-lg w-full">
                             {/* Timeline */}
                             <div className="w-1/8 flex flex-col items-center">
                                 {isMostRecentProject && (
@@ -47,25 +48,27 @@ export function Experience() {
                             {/* Experience Info */}
                             <div className="lg:w-1/2 p-4 flex flex-col justify-between lg:pr-8">
                                 {/* Title */}
-                                <h1 className="font-bold text-lg mb-1">
+                                <h1 className="font-bold text-xl mb-1">
                                     {exp.title}
                                 </h1>
                                 {/* Organization Name */}
-                                <p className="text-gray-600 mb-1">
+                                <p className="mb-1">
                                     {exp.orgName}
                                 </p>
                                 {/* Duration */}
                                 {/* Location */}
-                                <div className="flex justify-between text-gray-500 mb-2">
-                                    <p>
+                                <div className="flex justify-between mb-2">
+                                    <p className="flex items-center">
+                                        <CalendarHero />
                                         {exp.duration}
                                     </p>
-                                    <p>
+                                    <p className="flex items-center">
+                                        <LocationIcon />
                                         {exp.location}
                                     </p>
                                 </div>
                                 {/* Summary */}
-                                <div className="text-gray-700">
+                                <div className="text-neutral-400">
                                     {exp.summary}
                                 </div>
                             </div>
