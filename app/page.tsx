@@ -12,7 +12,7 @@ export default function Page() {
       {/* Headshot photo */}
       <div className='w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative'>
         <Image
-          src={"/profile/profile_pic_5.jpg"}
+          src={"/profile/Profile_pic_5.jpg"}
           alt='Headshot'
           fill={true}
           style={{ aspectRatio: '1/1', objectFit: "cover" }} />
