@@ -22,7 +22,9 @@ export default function Page() {
       </h1>
       <p className="mb-4">
         {/* Introduction */}
-        没想好写什么捏😋
+        没想好写什么捏😋<br />
+        placeholder<br />
+        placeholder<br />placeholder<br />placeholder<br />placeholder<br />placeholder<br />placeholder<br />placeholder<br />placeholder<br />placeholder<br />placeholder<br />
       </p>
       {/* Information Container */}
       <section className='divide-y divide-neutral-400 my-4 snap-start'>
