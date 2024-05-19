@@ -34,7 +34,8 @@ export function Experience() {
                         // Card view for each experience item
                         <div key={index}
                             className="flex flex-col lg:flex-row overflow-hidden rounded-lg w-full
-                            transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150">
+                            transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150
+                            my-8">
                             {/* Timeline */}
                             <div className="w-1/8 flex flex-col items-center">
                                 {isMostRecentProject && (
@@ -50,7 +51,7 @@ export function Experience() {
                             {/* Experience Info */}
                             <div className="lg:w-1/2 p-4 flex flex-col justify-between lg:pr-8">
                                 {/* Title */}
-                                <h1 className="font-bold text-xl mb-1">
+                                <h1 className="font-bold text-2xl mb-1">
                                     {exp.title}
                                 </h1>
                                 {/* Organization Name */}
@@ -77,13 +78,21 @@ export function Experience() {
                             {/* Image */}
                             <a href={exp.slug} className="w-full lg:w-1/2">
                                 {exp.image && (
-                                    <div>
+                                    <div className="relative">
                                         <Image
                                             src={exp.image}
                                             alt={exp.title}
                                             width={300}
                                             height={300}
                                             style={{ aspectRatio: '3/2', width: '100%', height: '100%', maxHeight: '300px' }}
+                                            className="grayscale z-0"
+                                        />
+                                        <Image
+                                            src={exp.logo}
+                                            alt={exp.title}
+                                            width={100}
+                                            height={150}
+                                            className="absolute z-10 bottom-3 left-10"
                                         />
                                     </div>
                                 )}

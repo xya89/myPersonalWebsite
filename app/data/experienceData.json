@@ -5,7 +5,8 @@
         "duration": "2023-06 - 2024-02",
         "location": "Richmond, BC",
         "summary": "Supply Chain Analyst, Data Analyst, SQL",
-        "image": "/Experience/Norsat.webp",
+        "image": "/Experience/work_experience_img/Norsat.webp",
+        "logo": "/Experience/work_experience_img/Norsat_logo.png",
         "slug": "https://www.norsat.com/pages/about-us"
     },
     {
@@ -14,7 +15,8 @@
         "duration": "2023-01 - 2023-04",
         "location": "Vancouver, BC",
         "summary": "Canine for Care project",
-        "image": "/Experience/VGH.avif",
+        "image": "/Experience/work_experience_img/VGH.avif",
+        "logo": "/Experience/work_experience_img/VCH_logo.png",
         "slug": "https://www.vch.ca/en/service/canines-care"
     },
     {
@@ -23,7 +25,8 @@
         "duration": "2022-09 - 2022-12",
         "location": "Burnaby, BC",
         "summary": "Steam Server Load Prediction",
-        "image": "/Experience/SFU_science_building.jpg",
+        "image": "/Experience/work_experience_img/SFU_science_building.jpg",
+        "logo": "/Experience/work_experience_img/SFU_logo.png",
         "slug": "https://github.com/xya89/TimeSeries-Steam-server-usage-forecast"
     },
     {
@@ -32,7 +35,8 @@
         "duration": "2021-01 - 2021-02",
         "location": "Buranby, BC",
         "summary": "Hongkong Vaccine Hackathon",
-        "image": "/Experience/SFU_wmc.jpg",
+        "image": "/Experience/work_experience_img/SFU_wmc.jpg",
+        "logo": "/Experience/work_experience_img/SFU_logo.png",
         "slug": "https://github.com/xya89/Revision-of-Vaccination-Distribution-in-Hong-Kong---Hackathon-2022"
     },
     {
@@ -41,7 +45,8 @@
         "duration": "2019-09 - 2019-12",
         "location": "Buranby, BC",
         "summary": "Android App...",
-        "image": "/Experience/SFU_as_building.jpg",
+        "image": "/Experience/work_experience_img/SFU_as_building.jpg",
+        "logo": "/Experience/work_experience_img/SFU_logo.png",
         "slug": "https://github.com/xya89/Android_Apps_CMPT276"
     }
 ]

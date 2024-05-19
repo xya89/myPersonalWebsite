@@ -12,18 +12,27 @@ export function Education() {
                     <div
                         key={index}
                         className="flex flex-col lg:flex-row shawdow-md rounded-lg overflow-hidden w-full
-                        transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150">
+                        lg:transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150
+                        shadow-lg">
                         {/* Image of the school */}
                         <a href={edu.slug} className="w-full lg:w-1/2">
                             {edu.image && (
-                                <div className="">
+                                <div className="relative">
                                     <Image
                                         src={edu.image}
                                         alt={edu.school}
                                         width={300}
                                         height={200}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover grayscale z-0"
                                         style={{ aspectRatio: '3/2', width: '100%', height: '100%', maxHeight: '300px' }}
+
+                                    />
+                                    <Image
+                                        src={edu.logo}
+                                        alt={edu.school}
+                                        width={250}
+                                        height={150}
+                                        className="z-10 bottom-5 left-5 absolute"
                                     />
                                 </div>
                             )}
