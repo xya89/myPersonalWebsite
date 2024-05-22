@@ -34,8 +34,8 @@ export function Navbar() {
   }
 
   return (
-    <aside className="fixed top-0 mb-16 tracking-tight bg-white dark:bg-black z-50 w-4xl bg-gray-700">
-      <div className="lg:sticky lg:top-20">
+    <aside className="tracking-tight bg-white dark:bg-black z-50 bg-gray-700">
+      <div className=" lg:fixed lg:top-0 bg-white dark:bg-black w-full">
         <nav className="relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative" id="nav">
           <div className="flex flex-row justify-between items-center px-4 py-2 lg:hidden">
             <div className="text-lg font-bold">{currentPage}</div>
