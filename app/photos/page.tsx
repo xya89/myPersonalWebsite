@@ -1,3 +1,4 @@
+import ImageGallery from "app/components/imageGallery"
 
 export const metadata = {
     title: 'Photo',
@@ -9,6 +10,7 @@ export default function Page() {
         <section>
             <p className='text-lg leading-relaxed my-4'>这是照片</p>
             {/* photo page component */}
+            {/* <ImageGallery images={null} /> */}
         </section>
     )
 }
