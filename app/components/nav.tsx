@@ -34,7 +34,7 @@ export function Navbar() {
   }
 
   return (
-    <aside className="mb-16 tracking-tight">
+    <aside className="fixed top-0 mb-16 tracking-tight bg-white dark:bg-black z-50 w-4xl bg-gray-700">
       <div className="lg:sticky lg:top-20">
         <nav className="relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative" id="nav">
           <div className="flex flex-row justify-between items-center px-4 py-2 lg:hidden">

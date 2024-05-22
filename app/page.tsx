@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <section>
       {/* Headshot photo */}
-      <div className='w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative'>
+      <div className='mt-20 w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative'>
         <Image
           src={"/profile/Profile_pic_5.jpg"}
           alt='Headshot'

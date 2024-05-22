@@ -7,7 +7,7 @@
 export default function Page() {
     return (
         <section>
-            <p className='text-lg leading-relaxed my-4'>这是视频</p>
+            <p className='text-lg leading-relaxed my-20'>这是视频</p>
             {/* Video page component */}
         </section>
     )
