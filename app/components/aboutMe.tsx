@@ -35,7 +35,7 @@ export function AboutMe() {
                 {/* Conditionally rending text based on language */}
                 {isEnglish ? "Hello" : "你好"}
             </h1>
-            <p className="mb-4">
+            <div className="mb-4">
                 {/* Introduction */}
                 {aboutMe.map((line, idx) => (
                     <div key={idx}>
@@ -52,7 +52,7 @@ export function AboutMe() {
                 ))}
 
 
-            </p>
+            </div>
 
         </section>
     )
