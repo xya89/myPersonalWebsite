@@ -26,6 +26,8 @@ export function BlogPosts() {
                     src={post.metadata.image}
                     alt={post.metadata.title}
                     fill={true}
+                    sizes='50%'
+                    priority={true}
                     style={{ aspectRatio: '9/16', objectFit: "cover" }}
                   />
                 )}

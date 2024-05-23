@@ -93,6 +93,7 @@ export function Experience() {
                                             width={100}
                                             height={150}
                                             className="absolute z-10 bottom-3 left-10"
+                                            style={{ width: 'auto' }}
                                         />
                                     </div>
                                 )}

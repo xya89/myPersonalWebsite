@@ -33,6 +33,7 @@ export function Education() {
                                         width={250}
                                         height={150}
                                         className="z-10 bottom-5 left-5 absolute"
+                                        style={{ width: 'auto' }}
                                     />
                                 </div>
                             )}

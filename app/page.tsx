@@ -15,7 +15,9 @@ export default function Page() {
           src={"/profile/Profile_pic_5.jpg"}
           alt='Headshot'
           fill={true}
-          style={{ aspectRatio: '1/1', objectFit: "cover" }} />
+          style={{ aspectRatio: '1/1', objectFit: "cover" }}
+          sizes='50%'
+          priority={true} />
       </div>
       <h1 className="mb-8 mt-8 text-2xl font-semibold tracking-tighter">
         你好
