@@ -15,15 +15,19 @@ export function Intro() {
                 {isEnglish ? "切换到中文" : "Switch to English"}
             </button>
             <div className="container lg:mx-auto space-y-6 w-full">
-                <div>
-                    无欲则刚
+                <div className="text-center">
+                    <h1 className="text-2xl animate-fadeOut duration-3000">
+                        无欲则刚
+                    </h1>
                 </div>
                 <div className="flex justify-between items-center">
-                    <div className="text-3xl">
+                    <div className="text-lg">
                         {/* Title */}
+                        一德阁
                     </div>
                     <div className="text-lg">
                         {/* introduction */}
+                        {isEnglish ? "AMNS" : "阿米诺斯"}
                     </div>
                 </div>
             </div>

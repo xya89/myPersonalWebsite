@@ -2,10 +2,13 @@
 import { Education } from 'app/components/education'
 import { Experience } from './components/experience'
 import { AboutMe } from './components/aboutMe'
+import { Intro } from './components/intro'
 
 export default function Page() {
   return (
     <section>
+      {/* Intro - landing section */}
+      <Intro />
       {/* About Me */}
       <AboutMe />
       {/* Information Container */}
