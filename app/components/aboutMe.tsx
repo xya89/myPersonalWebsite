@@ -38,11 +38,11 @@ export function AboutMe() {
                 {aboutMe.map((line, idx) => (
                     <div key={idx}>
                         {isEnglish ? (
-                            line.en.split('-').map((sentence, index) => (
+                            line.en.split('*').map((sentence, index) => (
                                 <p key={index}>{sentence.trim()}</p>
                             ))
                         ) : (
-                            line.zh.split("-").map((sentence, index) => (
+                            line.zh.split("*").map((sentence, index) => (
                                 <p key={index}>{sentence.trim()}</p>
                             ))
                         )}
