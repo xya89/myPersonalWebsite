@@ -1,12 +1,12 @@
 'use client'
 import Image from "next/image";
+import imageSource from 'app/data/imageSource.json'
 
-
-export default function ImageGallery({ images }) {
+export default function ImageGallery() {
     return (
         <div className="grid grid-rows-4 grid-flow-col gap-4">
-            {images.map((img) => (
-                <div key={img.id} className="relative w-full overflow-hidden">
+            {imageSource.map((img, index) => (
+                <div key={index} className="relative w-full overflow-hidden">
                     <Image
                         src={img.src}
                         alt={img.alt}
