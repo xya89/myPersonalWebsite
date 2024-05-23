@@ -15,7 +15,9 @@ export function AboutMe() {
 
     return (
         <section className="relative w-full">
-            <button onClick={toggleEN} className="absolute top-4 right-4 px-2 py-1 bg-blue-500 text-white text-sm rounded-md shadow-md hover:bg-blue-600">
+            <button
+                onClick={toggleEN}
+                className="absolute top-4 right-4 px-2 py-1 bg-blue-500 text-white text-sm rounded-md shadow-md hover:bg-blue-600">
                 {isEnglish ? "切换到中文" : "Switch to English"}
             </button>
 
