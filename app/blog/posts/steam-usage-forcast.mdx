@@ -147,15 +147,12 @@ Examination of the ACF, PACF, and
 EACF of the data:
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-ACF.39l0gvp2lj.webp" alt="ACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-ACF.39l0gvp2lj.webp" alt="ACF"/>
     ACF(1.1)
 </div>
 
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-PACF.2a4x3pmbfs.webp" alt="PACF" />
-    PACF(1.1)
-</div>
+
 
 From the ACF(1.1), we can see that the trend still exists, as the correlation reaches the max at
 around 0.8 for every lag7, and for lag2, lag3, lag4, and lag5. 
@@ -172,10 +169,6 @@ From the EACF, we can see it does not make much sense.
 Since the pure stationary MA and AR models can be identified by studying their ACF and PACF,
 as the table of Box-Jenkins Identification Tables:
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/Box-Jenkins-Tables.39l0gwir6l.webp" alt="table" style={{ display: 'block', margin: '0 auto' }} />
-    Box-Jenkins Table
-</div>
 
 By looking at the ACF for the series, we can see that the ACF does not decay exponentially, nor
 decays to zero after certain times, but instead there is a clear trend in the ACF for every 7
@@ -194,28 +187,16 @@ a stationary transformation. We named the transformed set as steam.log.
 
 First, we plot the transformed data, and its ACF, PACF.
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-plot.escb4f306.webp" alt="transformed-plot" />
-    Transformed Plot
-</div>
 
 From the transformed plot, we can see that:
 - there is still a layer of the different values.
-- most observations lay in the middle of the plot, where the transformed in.game = 0.0, where there are two layers at around transformed in.game = +/-
-0.2.
+- most observations lay in the middle of the plot, where the transformed in.game = 0.0, where there are two layers at around transformed in.game = +/-0.2.
 
 We need to examine the ACF and PACF.
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-ACF.3k7ua29hx0.webp" alt="ACF" />
-    ACF(2.1)
-</div>
 
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-PACF.8hgb3wn9px.webp" alt="PACF" />
-    PACF(2.1)
-</div>
+
 
 From the ACF(2.1), we can see that the trend still exist, as the correlation reaches the max at
 around 0.8 for every lag7, and for lag2, lag3,
@@ -254,38 +235,16 @@ There is a clear seasonal trend based on the ACF.
 ```
 m1.steam <- arima(steam2$In.Game, order=c(2,1,2),seasonal=list(order=c(0,1,1), period=7))
 ```
-<br/>
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seansonal-return.7sn1jwkcfs.webp" alt="model" style={{ display: 'block', margin: '0 auto' }} />
-    Seaonal Model 
-</div>
 
 Checking the histogram for standard error residuals, QQ plot for normality, and the ACF.
 
-<div style={{ textAlign: 'center' }}>
-<br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seasonal-residual.2vekq2nc72.webp" alt="std.err" style={{ display: 'block', margin: '0 auto' }} />
-    Standard Error for Residuals
-</div>
-<div style={{ textAlign: 'center' }}>
-<br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-noQQ.6m3qbbb3x7.webp" alt="Normal QQ Plot" style={{ display: 'block', margin: '0 auto' }} />
-    Normal QQ Plot 
-</div>
-<div style={{ textAlign: 'center' }}>
-<br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seasonal-ACF.3rb25iwphs.webp" alt="Seaonal ACF" style={{ display: 'block', margin: '0 auto' }} />
-    ACF
-</div>
+
 Acf for the seasonal model, clear that no data lay out side +- 2 sd.
 
 
 #### Forecasting
 
-<div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcasting.4xude48la8.webp" alt="forecast" style={{ display: 'block', margin: '0 auto' }} />
-</div>
 
 Based on the seasonal ARIMA model we get, we could do a forecasting of the number of
 active players in the future. 
@@ -305,12 +264,14 @@ prepared to handle the sudden shock of in-game active players
 
 
 #### Reading Data into R 
+
 ```
 >library(dplyr)
 >steam.raw <- read.csv("chart.csv", header = T)
 >glimpse(steam.raw)
 ```
 #### Preporcesssing
+
 ```
 //Get the ratio of missing values for each variable 
 > colMeans(is.na(steam))
@@ -332,16 +293,8 @@ colMeans(is.na(steam2))
 >plot(forecastData, main='tempView')
 ```
 Forecast data
-<div style={{ textAlign: 'center' }}>
-<br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-retu.1aotqlmiru.webp" alt="forecast" style={{ display: 'block', margin: '0 auto' }} />
-</div>
 
 Plot
-<div style={{ textAlign: 'center' }}>
-<br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-plot.70a626j1m3.webp" alt="forecast" style={{ display: 'block', margin: '0 auto' }} />
-</div>
 
 ### Dependencies:
 [STAT485-685-Rcode.R](https://github.com/xya89/TimeSeries-Steam-server-usage-forecast/blob/main/Stat485-685_Rcode.r)
