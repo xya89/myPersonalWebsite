@@ -28,8 +28,8 @@ export default function Page() {
   const isVisibeExperience = useIsVisible(ref2);
   return (
     <section>
-      {/* Intro - landing section */}
-      <Intro />
+      {/* Intro - landing section
+      <Intro /> */}
       {/* About Me */}
       <AboutMe />
       {/* Information Container */}

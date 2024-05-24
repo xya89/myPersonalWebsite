@@ -21,9 +21,9 @@ export function generateMetadata({ params }) {
     title,
     publishedAt: publishedTime,
     summary: description,
-    image,
+    cover,
   } = post.metadata
-  let ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+  let ogImage = cover ? cover : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -34,7 +34,7 @@ export function generateMetadata({ params }) {
       type: 'article',
       publishedTime,
       url: `${baseUrl}/blog/${post.slug}`,
-      images: [
+      cover: [
         {
           url: ogImage,
         },
@@ -44,7 +44,7 @@ export function generateMetadata({ params }) {
       card: 'summary_large_image',
       title,
       description,
-      images: [ogImage],
+      cover: [ogImage],
     },
   }
 }
@@ -57,8 +57,8 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className='flex justify-center'>
-      <div className='container lg mx-auto'>
+    <section className='flex justify-center w-full'>
+      <div className='container lg mx-auto w-full'>
         <div className='bg-white dark:bg-neutral-800 rounded-lg shadow-md break-all'>
           <script
             type="application/ld+json"
@@ -71,8 +71,8 @@ export default function Blog({ params }) {
                 datePublished: post.metadata.publishedAt,
                 dateModified: post.metadata.publishedAt,
                 description: post.metadata.summary,
-                image: post.metadata.image
-                  ? `${baseUrl}${post.metadata.image}`
+                image: post.metadata.cover
+                  ? `${baseUrl}${post.metadata.cover}`
                   : `/og?title=${encodeURIComponent(post.metadata.title)}`,
                 url: `${baseUrl}/blog/${post.slug}`,
                 author: {
@@ -82,8 +82,8 @@ export default function Blog({ params }) {
               }),
             }}
           />
-          {post.metadata.image && (<img
-            src={post.metadata.image}
+          {post.metadata.cover && (<img
+            src={post.metadata.cover}
             alt={post.metadata.title}
             className='w-full h-64 object-cover' />
           )}
@@ -95,6 +95,9 @@ export default function Blog({ params }) {
               <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 {formatDate(post.metadata.publishedAt)}
               </p>
+            </div>
+            <div className='flex justify-between items-center mt-2 mb-8 text-xl tracking-tighter'>
+              {post.metadata.summary}
             </div>
             <article className="prose">
               <CustomMDX source={post.content} />

@@ -21,9 +21,9 @@ export function BlogPosts() {
             <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden w-full 
             transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-300">
               <div className='w-full h-48 object-cover relative'>
-                {post.metadata.image && (
+                {post.metadata.cover && (
                   <Image
-                    src={post.metadata.image}
+                    src={post.metadata.cover}
                     alt={post.metadata.title}
                     fill={true}
                     sizes='50%'

@@ -23,7 +23,7 @@ export function Intro() {
                 <div className="flex justify-between items-center relative">
                     <div className="text-lg absolute top-1 left-2">
                         {/* Title */}
-                        一德阁
+                        奕德阁
                     </div>
                     <div className="text-lg absolute top-1 right-2">
                         {/* introduction */}
