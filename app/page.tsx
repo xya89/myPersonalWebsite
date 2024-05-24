@@ -5,7 +5,7 @@ import { AboutMe } from './components/aboutMe'
 import { Intro } from './components/intro'
 import { useState, useEffect, useRef } from 'react'
 
-export function useIsVisible(ref) {
+function useIsVisible(ref) {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
