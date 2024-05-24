@@ -70,21 +70,17 @@ probable shocks during this time.
 #### 3.1 Preporcesssing  
 
 We read the data into R and stored the data into a variable named steam.raw using the
-function read.csv below,
-```
+function read.csv below.
+```R
 > steam.raw <- read.csv("chart.csv", header=True)
 ```
 setting the header parameter to TRUE in order to use the header line of the csv file as
 column names. Upon examining the data, we found that there are four recorded variables:
 DateTime, Users, In.Game, and Flags. We also found that the variable Flags is completely
 missing its values, and In.Game is missing roughly 73% of its values.
-```
-> colMeans(is.na(steam.raw))
-```
-```
->>> DateTime   Users      In.Game    Flags
-    0.00000000 0.06275304 0.73279352 1.00000000
-```
+
+
+
 Considering the missing observations for Flag, we choose to omit this variable. The high
 percentage of missing values in In.Game is not alarming as the majority of these values are from
 before 2017. 
@@ -177,9 +173,7 @@ AR(p), MA(q), nor a ARMA(p,q).
 
 The next step is to stationary transform the series. We can use a log change approach for
 a stationary transformation. We named the transformed set as steam.log.
-```
-> In.Game.log <- log(steam2$In.Game) - lag(log(steam2$In.Game))
-```
+
 
 First, we plot the transformed data, and its ACF, PACF.
 
@@ -228,9 +222,6 @@ our data. One hypothesis we could make is that there is a seasonal trend per sev
 After the first difference. The general upward trend has now disappeared.
 
 There is a clear seasonal trend based on the ACF.
-```
-m1.steam <- arima(steam2$In.Game, order=c(2,1,2),seasonal=list(order=c(0,1,1), period=7))
-```
 
 
 Checking the histogram for standard error residuals, QQ plot for normality, and the ACF.
@@ -261,33 +252,13 @@ prepared to handle the sudden shock of in-game active players
 
 #### Reading Data into R 
 
-```
->library(dplyr)
->steam.raw <- read.csv("chart.csv", header = T)
->glimpse(steam.raw)
-```
 #### Preporcesssing
 
-```
-//Get the ratio of missing values for each variable 
-> colMeans(is.na(steam))
-// Remove unnecessary variables
-> steam.raw$Flags <- NULL
-// Format DateTime observations to remove unreported Time
-> steam.raw$DateTime <- as.Date(steam.raw$DateTime)
-// Trim all records before 2020-01-01, store the trimmed data into steam2
-n <- nrow(steam.raw)
-idx <- match(as.Date("2020-01-01"), as.Date(steam.raw[,"DateTime"]))
-steam2 <- steam.raw[idx:n,]
-//Make sure the cleaned time series is continuous.
-colMeans(is.na(steam2))
-```
+
 
 #### Forecasting 
-```
->forecastData <- forecast(m1.steam,14)
->plot(forecastData, main='tempView')
-```
+
+
 Forecast data
 
 Plot
