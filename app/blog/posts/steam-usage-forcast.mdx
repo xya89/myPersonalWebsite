@@ -22,15 +22,6 @@ SteamDB has collected this data accurately and that it is well maintained. Addit
 to assume that the data collected by SteamDB is truly representative of the official Steam
 database.
 
-```
-nmsl = wdnmd
-```
-
-<div>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time---line-+-point.2yy6nq9hlb.webp"
-    alt = "nmsl"/>
-    wdnmd
-</div>
 
 The time series data in this report is used to analyze the pattern in the daily user count for the
 Steam platform. We could conclude that there is a strong seasonality in daily active users on
@@ -79,15 +70,21 @@ probable shocks during this time.
 #### 3.1 Preporcesssing  
 
 We read the data into R and stored the data into a variable named steam.raw using the
-function read.csv below.
-
-
+function read.csv below,
+```
+> steam.raw <- read.csv("chart.csv", header=True)
+```
 setting the header parameter to TRUE in order to use the header line of the csv file as
 column names. Upon examining the data, we found that there are four recorded variables:
 DateTime, Users, In.Game, and Flags. We also found that the variable Flags is completely
 missing its values, and In.Game is missing roughly 73% of its values.
-
-
+```
+> colMeans(is.na(steam.raw))
+```
+```
+>>> DateTime   Users      In.Game    Flags
+    0.00000000 0.06275304 0.73279352 1.00000000
+```
 Considering the missing observations for Flag, we choose to omit this variable. The high
 percentage of missing values in In.Game is not alarming as the majority of these values are from
 before 2017. 
@@ -127,6 +124,9 @@ The visual trend of the data is a gradual positive increase of In.Game players o
 By the look of the series, we can make the conjecture that the series may be of the moving
 average model type, given its shape.
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time.5xagr8ekn3.webp" alt="ACF" />
+</div>
 
 There also appears to be some annual seasonality happening with the number of in-game players,
 however, we will touch on this later. We now begin our model fitting using the Box-Jenkins
@@ -138,7 +138,9 @@ Upon our first look at a visualization of the data, we now attempt to fit a mode
 time series of in-game Steam players using the Box-Jenkins method. A line graph of the series
 can be seen below.
 
-
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time---line-+-point.2yy6nq9hlb.webp" alt="ACF" />
+</div>
 The data shows an upwards trend from 2021 to 2022. 
 
 But there are clearly two “layers” of the data, meaning that the maximum values and minimum values have similar trends if the data is viewed
@@ -147,9 +149,16 @@ But there are clearly two “layers” of the data, meaning that the maximum val
 Examination of the ACF, PACF, and
 EACF of the data:
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-ACF.39l0gvp2lj.webp" alt="ACF" />
+    ACF(1.1)
+</div>
 
 
-
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-PACF.2a4x3pmbfs.webp" alt="PACF" />
+    PACF(1.1)
+</div>
 
 From the ACF(1.1), we can see that the trend still exists, as the correlation reaches the max at
 around 0.8 for every lag7, and for lag2, lag3, lag4, and lag5. 
@@ -166,6 +175,12 @@ From the EACF, we can see it does not make much sense.
 Since the pure stationary MA and AR models can be identified by studying their ACF and PACF,
 as the table of Box-Jenkins Identification Tables:
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/Box-Jenkins-Tables.39l0gwir6l.webp" 
+    alt="table" 
+    style={{ display: 'block', margin: '0 auto' }} />
+    Box-Jenkins Table
+</div>
 
 By looking at the ACF for the series, we can see that the ACF does not decay exponentially, nor
 decays to zero after certain times, but instead there is a clear trend in the ACF for every 7
@@ -178,20 +193,34 @@ AR(p), MA(q), nor a ARMA(p,q).
 
 The next step is to stationary transform the series. We can use a log change approach for
 a stationary transformation. We named the transformed set as steam.log.
-
+```
+> In.Game.log <- log(steam2$In.Game) - lag(log(steam2$In.Game))
+```
 
 First, we plot the transformed data, and its ACF, PACF.
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-plot.escb4f306.webp" alt="transformed-plot" />
+    Transformed Plot
+</div>
 
 From the transformed plot, we can see that:
 - there is still a layer of the different values.
-- most observations lay in the middle of the plot, where the transformed in.game = 0.0, where there are two layers at around transformed in.game = +/-0.2.
+- most observations lay in the middle of the plot, where the transformed in.game = 0.0, where there are two layers at around transformed in.game = +/-
+0.2.
 
 We need to examine the ACF and PACF.
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-ACF.3k7ua29hx0.webp" alt="ACF" />
+    ACF(2.1)
+</div>
 
 
-
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-PACF.8hgb3wn9px.webp" alt="PACF" />
+    PACF(2.1)
+</div>
 
 From the ACF(2.1), we can see that the trend still exist, as the correlation reaches the max at
 around 0.8 for every lag7, and for lag2, lag3,
@@ -227,16 +256,51 @@ our data. One hypothesis we could make is that there is a seasonal trend per sev
 After the first difference. The general upward trend has now disappeared.
 
 There is a clear seasonal trend based on the ACF.
+```
+m1.steam <- arima(steam2$In.Game, order=c(2,1,2),seasonal=list(order=c(0,1,1), period=7))
+```
+<br/>
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seansonal-return.7sn1jwkcfs.webp" 
+    alt="model" 
+    style={{ display: 'block', margin: '0 auto' }} />
+    Seaonal Model 
+</div>
 
 Checking the histogram for standard error residuals, QQ plot for normality, and the ACF.
 
-
+<div style={{ textAlign: 'center' }}>
+<br/>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seasonal-residual.2vekq2nc72.webp" 
+    alt="std.err" 
+    style={{ display: 'block', margin: '0 auto' }} />
+    Standard Error for Residuals
+</div>
+<div style={{ textAlign: 'center' }}>
+<br/>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-noQQ.6m3qbbb3x7.webp" 
+    alt="Normal QQ Plot" 
+    style={{ display: 'block', margin: '0 auto' }} />
+    Normal QQ Plot 
+</div>
+<div style={{ textAlign: 'center' }}>
+<br/>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seasonal-ACF.3rb25iwphs.webp" 
+    alt="Seaonal ACF" 
+    style={{ display: 'block', margin: '0 auto' }} />
+    ACF
+</div>
 Acf for the seasonal model, clear that no data lay out side +- 2 sd.
 
 
 #### Forecasting
 
+<div style={{ textAlign: 'center' }}>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcasting.4xude48la8.webp" 
+    alt="forecast" 
+    style={{ display: 'block', margin: '0 auto' }} />
+</div>
 
 Based on the seasonal ARIMA model we get, we could do a forecasting of the number of
 active players in the future. 
@@ -256,17 +320,47 @@ prepared to handle the sudden shock of in-game active players
 
 
 #### Reading Data into R 
-
+```
+>library(dplyr)
+>steam.raw <- read.csv("chart.csv", header = T)
+>glimpse(steam.raw)
+```
 #### Preporcesssing
-
-
+```
+//Get the ratio of missing values for each variable 
+> colMeans(is.na(steam))
+// Remove unnecessary variables
+> steam.raw$Flags <- NULL
+// Format DateTime observations to remove unreported Time
+> steam.raw$DateTime <- as.Date(steam.raw$DateTime)
+// Trim all records before 2020-01-01, store the trimmed data into steam2
+n <- nrow(steam.raw)
+idx <- match(as.Date("2020-01-01"), as.Date(steam.raw[,"DateTime"]))
+steam2 <- steam.raw[idx:n,]
+//Make sure the cleaned time series is continuous.
+colMeans(is.na(steam2))
+```
 
 #### Forecasting 
-
-
+```
+>forecastData <- forecast(m1.steam,14)
+>plot(forecastData, main='tempView')
+```
 Forecast data
+<div style={{ textAlign: 'center' }}>
+<br/>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-retu.1aotqlmiru.webp" 
+    alt="forecast" 
+    style={{ display: 'block', margin: '0 auto' }} />
+</div>
 
 Plot
+<div style={{ textAlign: 'center' }}>
+<br/>
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-plot.70a626j1m3.webp" 
+    alt="forecast" 
+    style={{ display: 'block', margin: '0 auto' }} />
+</div>
 
 ### Dependencies:
 [STAT485-685-Rcode.R](https://github.com/xya89/TimeSeries-Steam-server-usage-forecast/blob/main/Stat485-685_Rcode.r)
