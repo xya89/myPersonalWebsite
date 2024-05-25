@@ -2,7 +2,6 @@
 import { Education } from 'app/components/education'
 import { Experience } from './components/experience'
 import { AboutMe } from './components/aboutMe'
-import { Intro } from './components/intro'
 import { useState, useEffect, useRef } from 'react'
 
 function useIsVisible(ref) {
