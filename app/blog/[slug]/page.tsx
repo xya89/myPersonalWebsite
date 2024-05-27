@@ -96,7 +96,7 @@ export default function Blog({ params }) {
                 {formatDate(post.metadata.publishedAt)}
               </p>
             </div>
-            <div className='flex justify-between items-center mt-2 mb-8 text-xl tracking-tighter'>
+            <div className='flex justify-between items-center mt-2 mb-8 text-xl tracking-tighter break-normal'>
               {post.metadata.summary}
             </div>
             <article className="prose break-normal">
