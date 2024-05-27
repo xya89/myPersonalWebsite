@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image"
-import { CalendarIcon, LocationIcon } from "public/icon";
+import { Icon_CalendarIcon, Icon_LocationIcon } from "public/icon";
 import educationData from "app/data/educationData.json"
 
 export function Education() {
@@ -12,7 +12,7 @@ export function Education() {
                     <div
                         key={index}
                         className="flex flex-col lg:flex-row shawdow-md rounded-lg overflow-hidden w-full
-                        lg:transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150
+                        lg:transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-101 duration-150
                         shadow-lg">
                         {/* Image of the school */}
                         <a href={edu.slug} className="w-full lg:w-1/2">
@@ -59,11 +59,11 @@ export function Education() {
                             {/* time and location */}
                             <div className="flex justify-between mb-2">
                                 <p className="flex items-center">
-                                    <CalendarIcon />
+                                    <Icon_CalendarIcon />
                                     {edu.year}
                                 </p>
                                 <p className="flex items-center">
-                                    <LocationIcon />
+                                    <Icon_LocationIcon />
                                     {edu.location}
                                 </p>
                             </div>

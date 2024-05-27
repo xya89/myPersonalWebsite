@@ -1,35 +1,21 @@
-function ArrowIcon() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 12 12"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
+import { Icon_ArrowIcon, Icon_LinkedinIcon, Icon_GithubIcon } from "public/icon"
 
 export default function Footer() {
   return (
-    <footer className="mb-16">
+    <footer className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-4 mb-16">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        {/* <li>
+        <li>
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href=""
+            href="https://www.linkedin.com/in/sean-yang-6746621b7/"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
+            <Icon_ArrowIcon />
+            <Icon_LinkedinIcon />
+            <p className="ml-2 h-7">LinkedIn</p>
           </a>
-        </li> */}
+        </li>
         <li>
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -37,7 +23,8 @@ export default function Footer() {
             target="_blank"
             href="https://github.com/xya89/myPersonalWebsite"
           >
-            <ArrowIcon />
+            <Icon_ArrowIcon />
+            <Icon_GithubIcon />
             <p className="ml-2 h-7">github</p>
           </a>
         </li>

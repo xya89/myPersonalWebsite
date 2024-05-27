@@ -1,6 +1,6 @@
 import Image from "next/image"
 import experienceData from 'app/data/experienceData.json'
-import { CalendarHero, LocationIcon } from "public/icon";
+import { Icon_CalendarHero, Icon_LocationIcon } from "public/icon";
 
 export function Experience() {
 
@@ -34,7 +34,7 @@ export function Experience() {
                         // Card view for each experience item
                         <div key={index}
                             className="flex flex-col lg:flex-row overflow-hidden rounded-lg w-full
-                            transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-110 duration-150
+                            transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-101 duration-150
                             my-8">
                             {/* Timeline */}
                             <div className="w-1/8 flex flex-col items-center">
@@ -62,11 +62,11 @@ export function Experience() {
                                 {/* Location */}
                                 <div className="flex justify-between mb-2">
                                     <p className="flex items-center">
-                                        <CalendarHero />
+                                        <Icon_CalendarHero />
                                         {exp.duration}
                                     </p>
                                     <p className="flex items-center">
-                                        <LocationIcon />
+                                        <Icon_LocationIcon />
                                         {exp.location}
                                     </p>
                                 </div>

@@ -57,7 +57,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className='flex justify-center w-full'>
+    <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-8">
       <div className='container lg mx-auto w-full'>
         <div className='bg-white dark:bg-neutral-800 rounded-lg shadow-md break-all'>
           <script

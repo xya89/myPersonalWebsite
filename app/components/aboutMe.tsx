@@ -15,11 +15,11 @@ export function AboutMe() {
 
     return (
         <section className="relative w-full">
-            <button
+            {/* <button
                 onClick={toggleEN}
-                className="absolute top-4 right-4 px-2 py-1 bg-blue-500 text-white text-sm rounded-md shadow-md hover:bg-blue-600">
+                className="absolute top-0 right-4 px-2 py-1 bg-blue-500 text-white text-sm rounded-md shadow-md hover:bg-blue-600">
                 {isEnglish ? "切换到中文" : "Switch to English"}
-            </button>
+            </button> */}
 
             <div className='mt-20 w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative'>
                 {/* Headshot photos */}
@@ -31,10 +31,19 @@ export function AboutMe() {
                     sizes='50%'
                     priority={true} />
             </div>
-            <h1 className="mb-8 mt-8 text-2xl font-semibold tracking-tighter">
-                {/* Conditionally rending text based on language */}
-                {isEnglish ? "Hello" : "你好"}
-            </h1>
+            <div className="flex justify-between items-start">
+                <h1 className="mb-8 mt-8 text-2xl font-semibold tracking-tighter">
+                    {/* Conditionally rending text based on language */}
+                    {isEnglish ? "Hello" : "你好"}
+                </h1>
+
+                <button
+                    onClick={toggleEN}
+                    className="px-2 py-1 bg-blue-500 text-white text-sm rounded-md shadow-md hover:bg-blue-600">
+                    {isEnglish ? "切换到中文" : "Switch to English"}
+                </button>
+            </div>
+
             <div className="mb-4">
                 {/* Introduction */}
                 {aboutMe.map((line, idx) => (
@@ -50,8 +59,6 @@ export function AboutMe() {
                         )}
                     </div>
                 ))}
-
-
             </div>
 
         </section>
