@@ -55,7 +55,7 @@ export default function RootLayout({
     >
 
       <body className='antialised'>
-        <main>
+        <main className='container'>
           <Navbar />
           {children}
           <Footer />

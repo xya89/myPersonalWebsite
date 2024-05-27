@@ -51,7 +51,7 @@ export function Navbar() {
         ${isIntersecting
               ? "bg-zinc-900/0 border-transparent"
               : "bg-zinc-900/500 border-zinc-800"}`}>
-
+          {/* toggle drop down menu */}
           <div className="flex justify-between items-center px-4 py-2 lg:hidden">
             <button
               onClick={toggleMenu}
@@ -71,19 +71,36 @@ export function Navbar() {
 
 
           <div
-            className={`lg:ml-96 lg:flex lg:flex-row space-x-0 pr-10 ${isOpen ? 'block' : 'hidden'} lg:block container flex flex-row items-center space-x-0 pr-10`}>
-            {Object.entries(navItems).map(([path, { name }]) => (
-              <Link
-                key={path}
-                href={path}
-                className="text-lg transition-all hover:text-neutral-800 dark:hover:text-neutral-200 duration-200 flex align-middle relative py-1 px-2 m-1"
-                onClick={handleMenuItemClick}
-              >
-                {name}
-              </Link>
-            ))}
+            className={`lg:pl-8 lg:flex lg:flex-row space-x-4 pr-10 
+            ${isOpen
+                ? 'block opacity-100 transition-opacity duration-500 ease-in'
+                : 'hidden lg:block'} 
+            lg:block container flex flex-row items-center pr-10`}>
+            <div className="lg:hidden space-y-2">
+              {Object.entries(navItems).map(([path, { name }]) => (
+                <Link
+                  key={path}
+                  href={path}
+                  className="block text-lg transition-all hover:text-neutral-800 dark:hover:text-neutral-200 duration-200 py-2 px-4"
+                  onClick={handleMenuItemClick}
+                >
+                  {name}
+                </Link>
+              ))}
+            </div>
+            <div className="hidden lg:flex lg:items-center lg:space-x-4">
+              {Object.entries(navItems).map(([path, { name }]) => (
+                <Link
+                  key={path}
+                  href={path}
+                  className="text-lg transition-all hover:text-neutral-800 dark:hover:text-neutral-200 duration-200 py-2 px-4"
+                  onClick={handleMenuItemClick}
+                >
+                  {name}
+                </Link>
+              ))}
+            </div>
           </div>
-
         </div>
       </nav >
     </header>

@@ -26,7 +26,7 @@ export default function Page() {
   const ref2 = useRef(null)
   const isVisibeExperience = useIsVisible(ref2);
   return (
-    <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-8">
+    <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col lg:px-4 px-2">
       {/* Intro - landing section
       <Intro /> */}
       {/* About Me */}

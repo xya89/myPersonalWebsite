@@ -57,7 +57,7 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-8">
+    <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-2">
       <div className='container lg mx-auto w-full'>
         <div className='bg-white dark:bg-neutral-800 rounded-lg shadow-md break-all'>
           <script
@@ -99,7 +99,7 @@ export default function Blog({ params }) {
             <div className='flex justify-between items-center mt-2 mb-8 text-xl tracking-tighter'>
               {post.metadata.summary}
             </div>
-            <article className="prose">
+            <article className="prose break-normal">
               <CustomMDX source={post.content} />
             </article>
           </div>
