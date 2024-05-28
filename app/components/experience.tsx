@@ -99,6 +99,7 @@ export function Experience() {
                                 )}
 
                             </a>
+                            <hr className="lg:none text-zinc-700 dark:text-zinc-400 mt-4" />
                         </div>
                     )
 
