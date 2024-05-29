@@ -55,7 +55,7 @@ export function Experience() {
                                     {exp.title}
                                 </h1>
                                 {/* Organization Name */}
-                                <p className="mb-1 text-right">
+                                <p className="mb-1 text-light">
                                     {exp.orgName}
                                 </p>
                                 {/* Duration */}

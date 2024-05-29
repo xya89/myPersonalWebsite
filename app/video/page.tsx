@@ -1,8 +1,8 @@
 
-// export const metadata = {
-//   title: 'Blog',
-//   description: 'Read my blog.',
-// }
+export const metadata = {
+    title: 'Video',
+    description: 'Read my video.',
+}
 
 export default function Page() {
     return (

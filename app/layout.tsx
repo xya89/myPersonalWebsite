@@ -12,7 +12,7 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'hello',
+    default: 'Home',
     template: '%s',
   },
   description: 'This is my portfolio.',
