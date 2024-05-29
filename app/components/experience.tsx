@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link";
 import experienceData from 'app/data/experienceData.json'
 import { Icon_CalendarHero, Icon_LocationIcon } from "public/icon";
 
@@ -76,7 +77,7 @@ export function Experience() {
                                 </div>
                             </div>
                             {/* Image */}
-                            <a href={exp.slug} className="w-full lg:w-1/2">
+                            <Link href={exp.slug} className="w-full lg:w-1/2" target="_blank">
                                 {exp.image && (
                                     <div className="relative">
                                         <Image
@@ -98,7 +99,7 @@ export function Experience() {
                                     </div>
                                 )}
 
-                            </a>
+                            </Link>
                             <hr className="lg:none text-zinc-700 dark:text-zinc-400 mt-4" />
                         </div>
                     )

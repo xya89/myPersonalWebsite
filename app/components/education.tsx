@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image"
+import Link from "next/link";
 import { Icon_CalendarIcon, Icon_LocationIcon } from "public/icon";
 import educationData from "app/data/educationData.json"
 
@@ -15,7 +16,7 @@ export function Education() {
                         lg:transition ease-in-out delay-10 hover:-translate-y-1 hover:scale-101 duration-150
                         shadow-lg">
                         {/* Image of the school */}
-                        <a href={edu.slug} className="w-full lg:w-1/2">
+                        <Link href={edu.slug} className="w-full lg:w-1/2" target="_blank">
                             {edu.image && (
                                 <div className="relative">
                                     <Image
@@ -37,14 +38,14 @@ export function Education() {
                                     />
                                 </div>
                             )}
-                        </a>
+                        </Link>
                         {/* School Info */}
                         <div className="lg:w-1/2 w-full p-4 flex flex-col justify-between">
                             {/* School Name */}
                             <h1 className="text-center font-bold text-2xl mb-2 lg:mb-0 lg:mt-0 hover:text-red-400">
-                                <a href={edu.slug}>
+                                <Link href={edu.slug} target="_blank">
                                     {edu.school}
-                                </a>
+                                </Link>
                             </h1>
                             {/* Education Achievment */}
                             <div className="text-sky-500 text-center mb-2 lg:mb-0 text-sm">
