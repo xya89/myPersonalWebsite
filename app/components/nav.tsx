@@ -16,6 +16,9 @@ const navItems = {
   '/video': {
     name: 'video'
   },
+  '/aboutme': {
+    name: 'about'
+  },
 }
 
 export function Navbar() {

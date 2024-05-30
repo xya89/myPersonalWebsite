@@ -1,10 +1,5 @@
 import { BlogPosts } from 'app/components/posts'
 
-export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
-}
-
 export default function Page() {
   return (
     <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-2 lg:px-4">
