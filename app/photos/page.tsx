@@ -1,5 +1,5 @@
 
-import ImageGallery from "app/components/imageGallery";
+import ImageGallery from "app/photos/components/imageGallery";
 
 export default function Page() {
     return (

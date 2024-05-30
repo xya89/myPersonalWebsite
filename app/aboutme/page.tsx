@@ -1,24 +1,9 @@
 'use client'
-import { Education } from 'app/components/education'
-import { Experience } from 'app/components/experience'
-import { AboutMe } from 'app/components/aboutMe'
-import { useState, useEffect, useRef } from 'react'
-
-function useIsVisible(ref) {
-    const [isIntersecting, setIntersecting] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            setIntersecting(entry.isIntersecting)
-        })
-
-        observer.observe(ref.current);
-        return () => {
-            observer.disconnect();
-        }
-    }, [ref]);
-    return isIntersecting;
-}
+import { Education } from 'app/aboutme/components/education'
+import { Experience } from 'app/aboutme/components/experience'
+import { AboutMe } from 'app/aboutme/components/aboutMe'
+import { useRef } from 'react'
+import { useIsVisible } from 'app/utils/isVisible'
 
 export default function Page() {
     const ref1 = useRef(null)
