@@ -62,7 +62,7 @@ export function Experience() {
                             {/* Experience Info */}
                             <div className="lg:w-1/2 p-4 flex flex-col justify-between lg:pr-8">
                                 {/* Title */}
-                                <h1 className="font-bold text-2xl mb-1">
+                                <h1 className="font-bold text-2xl mb-1 duration-500 hover:text-red-600">
                                     {exp.title}
                                 </h1>
                                 {/* Organization Name */}

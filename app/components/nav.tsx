@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { Icon_CollapseIcon, Icon_CrossIcon } from 'public/icon'
+import { useIsVisible } from 'app/utils/isVisible'
 
 const navItems = {
   '/': {
@@ -43,6 +44,8 @@ export function Navbar() {
     setIsOpen(false);
   }
 
+  const refMiniBar = useRef(null);
+  const isMiniVisible = useIsVisible(refMiniBar);
   return (
     <header ref={ref}>
       <nav
@@ -74,12 +77,21 @@ export function Navbar() {
 
 
           <div
+            ref={refMiniBar}
             className={`lg:pl-8 lg:flex lg:flex-row space-x-4 pr-10 
             ${isOpen
                 ? 'block opacity-100 transition-opacity duration-500 ease-in'
                 : 'hidden lg:block'} 
-            lg:block container flex flex-row items-center pr-10`}>
-            <div className="lg:hidden space-y-2">
+            lg:block container flex flex-row items-center pr-10
+            transition-opactiy ease-in duration-700 ${isMiniVisible ? "opacity-100" : "opacity-0"}
+            `}>
+            <div
+              ref={refMiniBar}
+              className={`lg:hidden space-y-2
+              bg-gradient-to-tr text-transparent bg-clip-text
+              from-zinc-800 via-zinc-600 to-stone-600
+              dark:from-zinc-400 dark:via-zinc-100 dark:to-stone-300
+              transition-opactiy ease-in duration-700 ${isMiniVisible ? "opacity-100" : "opacity-0"}`}>
               {Object.entries(navItems).map(([path, { name }]) => (
                 <Link
                   key={path}
@@ -91,12 +103,16 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className="hidden lg:flex lg:items-center lg:space-x-4">
+            <div className="hidden lg:flex lg:items-center lg:space-x-4
+            bg-gradient-to-b text-transparent bg-clip-text
+            from-zinc-900 via-zinc-800 to-stone-500.50
+            dark:from-zinc-300 dark:via-zinc-100 dark:to-stone-800
+            ">
               {Object.entries(navItems).map(([path, { name }]) => (
                 <Link
                   key={path}
                   href={path}
-                  className="text-lg transition-all hover:text-neutral-800 dark:hover:text-neutral-200 duration-200 py-2 px-4"
+                  className="text-xl transition-all hover:text-red-600 dark:hover:text-red-600 duration-500 py-2 px-4"
                   onClick={handleMenuItemClick}
                 >
                   {name}
@@ -106,6 +122,6 @@ export function Navbar() {
           </div>
         </div>
       </nav >
-    </header>
+    </header >
   )
 }

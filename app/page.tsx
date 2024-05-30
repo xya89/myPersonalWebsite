@@ -44,7 +44,8 @@ export default function Home() {
         <nav className="my-16 ">
           <ul className="flex items-center justify-center gap-4
           bg-gradient-to-b text-transparent bg-clip-text 
-          from-zinc-700/70 via-zinc-500 to-zinc-700.70">
+          from-zinc-700/70 via-zinc-500 to-zinc-700.70
+          dark:from-zinc-300/50 dark:via-zinc-200/70 dark:to-stone-800">
             {navigation.map((item) => (
               <Link
                 key={item.href}

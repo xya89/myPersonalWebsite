@@ -52,7 +52,8 @@ export function Education() {
                         {/* School Info */}
                         <div className="lg:w-1/2 w-full p-4 flex flex-col justify-between">
                             {/* School Name */}
-                            <h1 className="text-center font-bold text-2xl mb-2 lg:mb-0 lg:mt-0 hover:text-red-400">
+                            <h1 className="text-center font-bold text-2xl mb-2 lg:mb-0 lg:mt-0 
+                            duration-500 hover:text-red-600">
                                 <Link href={edu.slug} target="_blank">
                                     {edu.school}
                                 </Link>
