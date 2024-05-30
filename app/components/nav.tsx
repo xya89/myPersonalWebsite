@@ -77,13 +77,11 @@ export function Navbar() {
 
 
           <div
-            ref={refMiniBar}
             className={`lg:pl-8 lg:flex lg:flex-row space-x-4 pr-10 
             ${isOpen
                 ? 'block opacity-100 transition-opacity duration-500 ease-in'
                 : 'hidden lg:block'} 
             lg:block container flex flex-row items-center pr-10
-            transition-opactiy ease-in duration-700 ${isMiniVisible ? "opacity-100" : "opacity-0"}
             `}>
             <div
               ref={refMiniBar}
