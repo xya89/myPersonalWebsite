@@ -1,12 +1,23 @@
 import Image from "next/image"
 import Link from "next/link";
+import { useIsVisible } from "app/utils/isVisible";
 import { Icon_CalendarIcon, Icon_LocationIcon } from "public/icon";
 import educationData from "app/data/educationData.json"
+import { useRef } from "react";
 
 export function Education() {
+    const refAll = useRef(null);
+    const isVisibleComp = useIsVisible(refAll);
+
     return (
-        <section className=' flex flex-row justify-center w-full'>
+        <section
+            ref={refAll}
+            className={`flex flex-row justify-center w-full
+            transition-opactiy ease-in duration-700 ${isVisibleComp ? "opacity-100" : "opacity-0"}`}>
             <div className="containter lg:mx-auto space-y-6 justify-center w-full">
+                <h1 className='font-bond text-3xl text-left mb-4 mt-4'>
+                    Education
+                </h1>
                 {educationData.map((edu, index) => (
                     // Card view for each education experience
                     <div

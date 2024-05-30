@@ -1,7 +1,8 @@
 'use client'
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Image from "next/image"
 import aboutMe from "app/data/aboutMe.json"
+import { useIsVisible } from "app/utils/isVisible"
 
 export function AboutMe() {
 
@@ -12,16 +13,16 @@ export function AboutMe() {
         setIsEnglish(prevState => !prevState);
     }
 
+    const refAll = useRef(null);
+    const isVisibleAll = useIsVisible(refAll);
 
     return (
-        <section className="relative w-full">
-            {/* <button
-                onClick={toggleEN}
-                className="absolute top-0 right-4 px-2 py-1 bg-blue-500 text-white text-sm rounded-md shadow-md hover:bg-blue-600">
-                {isEnglish ? "切换到中文" : "Switch to English"}
-            </button> */}
+        <section ref={refAll}
+            className={`relative w-full 
+                        transition-opactiy ease-in duration-700 ${isVisibleAll ? "opacity-100" : "opacity-0"}`}>
 
-            <div className='mt-20 w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative'>
+            <div className={`mt-20 w-32 h-32 rounded-full overflow-hidden bg-gray-300 dark:bg-gray-700 flex-shrink-0 mr-8 relative
+            `}>
                 {/* Headshot photos */}
                 <Image
                     src={"/profile/Profile_pic_5.jpg"}

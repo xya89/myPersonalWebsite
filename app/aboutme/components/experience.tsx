@@ -2,6 +2,8 @@ import Image from "next/image"
 import Link from "next/link";
 import experienceData from 'app/data/experienceData.json'
 import { Icon_CalendarHero, Icon_LocationIcon } from "public/icon";
+import { useIsVisible } from "app/utils/isVisible";
+import { useRef } from "react";
 
 export function Experience() {
 
@@ -23,10 +25,18 @@ export function Experience() {
         return acc;
     }, {});
 
-    return (
-        <section className="flex flex-row justify-center w-full">
-            <div className="containter lg:mx-auto space-y-6 justify-center w-full ">
+    const refAll = useRef(null);
+    const isVisibleComp = useIsVisible(refAll);
 
+    return (
+        <section ref={refAll}
+            className={`flex flex-row justify-center w-full
+        transition-opactiy ease-in duration-700 ${isVisibleComp ? "opacity-100" : "opacity-0"}
+        `}>
+            <div className="containter lg:mx-auto space-y-6 justify-center w-full ">
+                <h1 className='font-bond text-3xl text-left mb-4 mt-4'>
+                    Experience
+                </h1>
                 {experienceData.map((exp, index) => {
                     const year = exp.duration.split('-')[0].trim();
                     const isMostRecentProject = yearsWihMostRecentProjects[year] === exp;
