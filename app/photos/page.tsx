@@ -1,7 +1,7 @@
-
+'use client'
 import ImageGallery from "app/photos/components/imageGallery";
 
-export default function Page() {
+export default async function Page() {
     return (
         <section className="antialiased max-w-6xl mx-2 mt-8 lg:mx-auto flex-auto min-w-0 mt-6 flex flex-col px-2 lg:px-4">
             <h1 className="font-semibold text-2xl mb-8 mt-20 tracking-tighter
@@ -15,6 +15,17 @@ export default function Page() {
             '>
                 这是照片
             </p>
+            <p>
+
+            </p>
+            {/* <Image
+                loader={imageLoader}
+                src={getAllFile(src) }
+                alt={"no load"}
+                width={100}
+                height={100}
+            /> */}
+
             <ImageGallery />
         </section>
     );

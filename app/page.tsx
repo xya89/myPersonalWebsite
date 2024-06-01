@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import React from "react";
-import { useIsVisible } from "./utils/isVisible";
+import { useIsVisible } from "app/utils/isVisible";
 import Particles from "./components/particles";
 import { useRef } from "react";
 

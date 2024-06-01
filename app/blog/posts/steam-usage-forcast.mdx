@@ -125,7 +125,7 @@ By the look of the series, we can make the conjecture that the series may be of 
 average model type, given its shape.
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time.5xagr8ekn3.webp" alt="ACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time.5xagr8ekn3.9nzmjaz3gr.webp" alt="ACF" />
 </div>
 
 There also appears to be some annual seasonality happening with the number of in-game players,
@@ -139,7 +139,7 @@ time series of in-game Steam players using the Box-Jenkins method. A line graph 
 can be seen below.
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time---line-+-point.2yy6nq9hlb.webp" alt="ACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/picX-Number-of-Daily-In.Game-Steam-Useres-over-Time---line-+-point.2yy6nq9hlb.7w6noefqkq.webp" alt="ACF" />
 </div>
 The data shows an upwards trend from 2021 to 2022. 
 
@@ -150,13 +150,13 @@ Examination of the ACF, PACF, and
 EACF of the data:
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-ACF.39l0gvp2lj.webp" alt="ACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/picX-ACF.39l0gvp2lj.6bgwoxij4a.webp" alt="ACF" />
     ACF(1.1)
 </div>
 
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/picX-PACF.2a4x3pmbfs.webp" alt="PACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/picX-PACF.2a4x3pmbfs.4xudkw7h3g.webp" alt="PACF" />
     PACF(1.1)
 </div>
 
@@ -176,7 +176,7 @@ Since the pure stationary MA and AR models can be identified by studying their A
 as the table of Box-Jenkins Identification Tables:
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/Box-Jenkins-Tables.39l0gwir6l.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/Box-Jenkins-Tables.39l0gwir6l.64dothwdop.webp" 
     alt="table" 
     style={{ display: 'block', margin: '0 auto' }} />
     Box-Jenkins Table
@@ -200,7 +200,7 @@ a stationary transformation. We named the transformed set as steam.log.
 First, we plot the transformed data, and its ACF, PACF.
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-plot.escb4f306.webp" alt="transformed-plot" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/transformed-plot.escb4f306.3go8j53cco.webp" alt="transformed-plot" />
     Transformed Plot
 </div>
 
@@ -212,13 +212,13 @@ From the transformed plot, we can see that:
 We need to examine the ACF and PACF.
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-ACF.3k7ua29hx0.webp" alt="ACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/transformed-ACF.3k7ua29hx0.67xar7pgef.webp" alt="ACF" />
     ACF(2.1)
 </div>
 
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/transformed-PACF.8hgb3wn9px.webp" alt="PACF" />
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/transformed-PACF.8hgb3wn9px.49140vjy2v.webp" alt="PACF" />
     PACF(2.1)
 </div>
 
@@ -262,7 +262,7 @@ m1.steam <- arima(steam2$In.Game, order=c(2,1,2),seasonal=list(order=c(0,1,1), p
 <br/>
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seansonal-return.7sn1jwkcfs.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/seansonal-return.7sn1jwkcfs.64dothwdoo.webp" 
     alt="model" 
     style={{ display: 'block', margin: '0 auto' }} />
     Seaonal Model 
@@ -272,21 +272,21 @@ Checking the histogram for standard error residuals, QQ plot for normality, and 
 
 <div style={{ textAlign: 'center' }}>
 <br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seasonal-residual.2vekq2nc72.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/seasonal-residual.2vekq2nc72.7i07xj7fpp.webp" 
     alt="std.err" 
     style={{ display: 'block', margin: '0 auto' }} />
     Standard Error for Residuals
 </div>
 <div style={{ textAlign: 'center' }}>
 <br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-noQQ.6m3qbbb3x7.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/steam-forcast-noQQ.6m3qbbb3x7.5j41771xe6.webp" 
     alt="Normal QQ Plot" 
     style={{ display: 'block', margin: '0 auto' }} />
     Normal QQ Plot 
 </div>
 <div style={{ textAlign: 'center' }}>
 <br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/seasonal-ACF.3rb25iwphs.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/seasonal-ACF.3rb25iwphs.361eurz2th.webp" 
     alt="Seaonal ACF" 
     style={{ display: 'block', margin: '0 auto' }} />
     ACF
@@ -297,7 +297,7 @@ Acf for the seasonal model, clear that no data lay out side +- 2 sd.
 #### Forecasting
 
 <div style={{ textAlign: 'center' }}>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcasting.4xude48la8.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/steam-forcasting.8hgbfhl5hi.webp" 
     alt="forecast" 
     style={{ display: 'block', margin: '0 auto' }} />
 </div>
@@ -349,7 +349,7 @@ colMeans(is.na(steam2))
 Forecast data
 <div style={{ textAlign: 'center' }}>
 <br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-retu.1aotqlmiru.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/steam-forcast-retu.1aotqlmiru.92pyx04n5x.webp" 
     alt="forecast" 
     style={{ display: 'block', margin: '0 auto' }} />
 </div>
@@ -357,7 +357,7 @@ Forecast data
 Plot
 <div style={{ textAlign: 'center' }}>
 <br/>
-    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/steam-forcast-plot.70a626j1m3.webp" 
+    <img src="https://cdn.jsdelivr.net/gh/xya89/picx-images-hosting@master/posts/steam_server_forecast/steam-forcast-plot.2yy6zccxe0.webp" 
     alt="forecast" 
     style={{ display: 'block', margin: '0 auto' }} />
 </div>
