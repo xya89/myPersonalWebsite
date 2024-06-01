@@ -1,5 +1,5 @@
-'use client'
 import ImageGallery from "app/photos/components/imageGallery";
+import { FadeText } from "app/utils/fadehovertext";
 
 export default async function Page() {
     return (
@@ -11,21 +11,12 @@ export default async function Page() {
             ">
                 Photo
             </h1>
-            <p className='text-lg leading-relaxed my-20
-            '>
-                这是照片
-            </p>
-            <p>
-
-            </p>
-            {/* <Image
-                loader={imageLoader}
-                src={getAllFile(src) }
-                alt={"no load"}
-                width={100}
-                height={100}
-            /> */}
-
+            <FadeText
+                diyStyle={'text-lg leading-relaxed my-20 w-fit'}
+                defaultText={'这是照片'}
+                hoverText={'一把米诺欧内的手通过好汉'}
+                duration={300}
+            />
             <ImageGallery />
         </section>
     );
