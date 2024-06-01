@@ -28,7 +28,7 @@ export default function Home() {
       />
       <FadeText
         diyStyle="
-        z-10 text-6xl sm:text-6xl md:text-8xl mb-4
+        z-10 text-6xl sm:text-6xl md:text-8xl text-center break-normal mb-4
         bg-gradient-to-tr inline-block text-transparent bg-clip-text
         from-red-300/20 via-neutral-600 to-stone-200/20 
         dark:from-red-600/70 dark:via-zinc-600 dark:to-zinc-900"
