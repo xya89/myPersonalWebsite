@@ -12,11 +12,20 @@ export default async function Page() {
                 Photo
             </h1>
             <FadeText
-                diyStyle={'text-lg leading-relaxed my-20 w-fit'}
+                diyStyle={'text-lg leading-relaxed mt-20 mb-10 w-fit'}
                 defaultText={'这是照片'}
                 hoverText={'一把米诺欧内的手通过好汉'}
                 duration={300}
+                enableClicked={true}
             />
+            <h2
+                className="text-large leading-relaxed mb-10">
+                Used aliases
+                <ul>
+                    <li>- edwardyoung photography</li>
+                    <li>- young photography</li>
+                </ul>
+            </h2>
             <ImageGallery />
         </section>
     );

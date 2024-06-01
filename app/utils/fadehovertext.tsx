@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 
-export function FadeText({ diyStyle, defaultText, hoverText, duration }) {
+export function FadeText({ diyStyle, defaultText, hoverText, duration, enableClicked }) {
     const [text, setText] = useState(defaultText);
     const [isFadingOut, setIsFadingOut] = useState(false);
 
@@ -21,6 +21,12 @@ export function FadeText({ diyStyle, defaultText, hoverText, duration }) {
         }, duration / 2); // Duration should match the CSS transition duration
     };
 
+    const handleClick = () => {
+        if (enableClicked) {
+            handleMouseEnter();
+        }
+    }
+
     return (
         <div
             className={`
@@ -30,6 +36,7 @@ export function FadeText({ diyStyle, defaultText, hoverText, duration }) {
             `}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
         >
             {text}
         </div>

@@ -35,6 +35,7 @@ export default function Home() {
         defaultText={"Hello"}
         hoverText={"なんで春日影やったの!?"}
         duration={300}
+        enableClicked={true}
       />
       <div className="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
@@ -47,6 +48,7 @@ export default function Home() {
         defaultText={"I'm Sean Yang, welcome to my website."}
         hoverText={"春日影はやらないから"}
         duration={300}
+        enableClicked={true}
       />
 
       <div className="my-16 text-center ">
