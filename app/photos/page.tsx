@@ -12,20 +12,32 @@ export default async function Page() {
                 Photo
             </h1>
             <FadeText
-                diyStyle={'text-lg leading-relaxed mt-20 mb-10 w-fit'}
-                defaultText={'这是照片'}
-                hoverText={'一把米诺欧内的手通过好汉'}
+                diyStyle={'text-4xl leading-relaxed mt-2 mb-10 w-fit font-bold'}
+                defaultText={'その一瞬を、永遠に'}
+                hoverText={'请欣赏：1145年一把米诺贝尔视觉金奖'}
                 duration={300}
                 enableClicked={true}
             />
-            <h2
-                className="text-large leading-relaxed mb-10">
-                Used aliases
-                <ul>
-                    <li>- edwardyoung photography</li>
-                    <li>- young photography</li>
-                </ul>
-            </h2>
+            <div
+                className="flex justify-between">
+                <div
+                    className="items-left text-large leading-relaxed mb-10 text-left">
+                    Watermarks:
+                    <ul className="text-sm text-gray-700 dark:text-gray-400">
+                        <li>Edwardyoung photography</li>
+                        <li>Young photography</li>
+                    </ul>
+                </div>
+                <div
+                    className="items-right text-large leading-relaxed mb-10 text-right">
+                    Gears
+                    <ul className="text-sm text-gray-700 dark:text-gray-400">
+                        <li>Sony ILCE-7M3</li>
+                        <li>Sony 16-35mm F4 ZA</li>
+                    </ul>
+                </div>
+            </div>
+
             <ImageGallery />
         </section>
     );
