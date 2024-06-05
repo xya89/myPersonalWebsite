@@ -22,9 +22,11 @@ export function FadeText({ diyStyle, defaultText, hoverText, duration, enableCli
     };
 
     const handleClick = () => {
-        if (enableClicked) {
-            handleMouseEnter();
+        if (enableClicked && !isFadingOut) {
+            handleMouseLeave();
+            return;
         }
+        handleMouseEnter();
     }
 
     return (
