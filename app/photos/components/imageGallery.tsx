@@ -52,11 +52,18 @@ export default function ImageGallery() {
     return (
         <section ref={refAll}
             className={`transition-opactiy ease-in duration-700 ${isVisibleThis ? "opacity-100" : "opacity-0"}`}>
-            <div className={`grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 justify-normal 
+            <div
+                className={`grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 justify-normal 
                 ${selectedImage ? 'blur-md grayscale brightness-50' : ''}
             `}>
                 {shuffledImage.map((img, index) => (
-                    <div key={index} className="relative w-full h-96 object-cover">
+                    <div key={index}
+                        className={`
+                        relative w-full h-96 object-cover
+                        transition-opactiy ease-in duration-700 ${isVisibleThis ? "opacity-100" : "opacity-0"}
+                        `}
+                        ref={refAll}
+                    >  {/*not sure if this transition works on card image */}
                         <Image
                             src={img.src}
                             alt={img.alt}
