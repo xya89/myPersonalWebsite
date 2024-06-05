@@ -71,7 +71,7 @@ export default function ImageGallery() {
             {selectedImage && (
                 <div className={`fixed inset-0 flex justify-center items-center z-50`}>
                     <div className={`
-                    relative bg-white dark:bg-black/50
+                    relative bg-white/90 dark:bg-black/50
                     lg:w-[70%] lg:h-[85%] lg:m-20 lg:mt-10
                     md:h-[60%]
                     w-11/12 h-3/4 
