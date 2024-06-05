@@ -22,7 +22,7 @@ export default async function Page() {
                 className="flex justify-between">
                 <div
                     className="items-left text-large leading-relaxed mb-10 text-left">
-                    Watermarks:
+                    My Watermarks:
                     <ul className="text-sm text-gray-700 dark:text-gray-400">
                         <li>Edwardyoung photography</li>
                         <li>Young photography</li>
@@ -30,10 +30,11 @@ export default async function Page() {
                 </div>
                 <div
                     className="items-right text-large leading-relaxed mb-10 text-right">
-                    Gears
+                    My Gears
                     <ul className="text-sm text-gray-700 dark:text-gray-400">
                         <li>Sony ILCE-7M3</li>
                         <li>Sony 16-35mm F4 ZA</li>
+                        <li>...more</li>
                     </ul>
                 </div>
             </div>
