@@ -71,6 +71,8 @@ export default function ImageGallery() {
                             sizes="50%"
                             style={{ aspectRatio: '4/3', objectFit: "cover" }}
                             onClick={() => handleImageClick(img)}
+
+                            loading="lazy"
                         />
                     </div>
                 ))}
@@ -95,7 +97,7 @@ export default function ImageGallery() {
                                 fill={true}
                                 sizes="100%"
                                 style={{ objectFit: "contain", display: "block" }}
-                                className=""
+                                priority
                             />
                         </div>
 

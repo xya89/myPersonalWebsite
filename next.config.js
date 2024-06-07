@@ -1,5 +1,6 @@
 module.exports = {
     images: {
-        domains: ['cdn.jsdelivr.net']
+        domains: ['cdn.jsdelivr.net'],
+        minimumCacheTTL: 60,
     },
 }
