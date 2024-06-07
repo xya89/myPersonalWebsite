@@ -69,9 +69,10 @@ export default function ImageGallery() {
                             alt={img.alt}
                             fill={true}
                             sizes="50%"
-                            style={{ aspectRatio: '4/3', objectFit: "cover" }}
+                            style={{ aspectRatio: '4/3', objectFit: "cover", width: '100%' }}
                             onClick={() => handleImageClick(img)}
-
+                            placeholder="blur"
+                            blurDataURL={img.src}
                             loading="lazy"
                         />
                     </div>
