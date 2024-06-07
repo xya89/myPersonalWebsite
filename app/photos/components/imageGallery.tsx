@@ -72,17 +72,6 @@ export default function ImageGallery() {
                                 loading="lazy"
                             />
                         </div>
-                        {/* <Image
-                            src={img.src}
-                            alt={img.alt}
-                            // fill={true}
-                            sizes="50%"
-                            width={800}
-                            height={600}
-                            style={{ aspectRatio: '4/3', objectFit: "cover", }}
-                            onClick={() => handleImageClick(img)}
-                            loading="lazy"
-                        /> */}
                     </div>
                 ))}
             </div>
@@ -109,14 +98,6 @@ export default function ImageGallery() {
                                     loading="lazy"
                                 />
                             </div>
-                            {/* <Image
-                                src={selectedImage.src}
-                                alt={selectedImage.alt}
-                                fill={true}
-                                sizes="100%"
-                                style={{ objectFit: "contain", display: "block" }}
-                                priority
-                            /> */}
                         </div>
 
                         {/* 单页照片标题 - 统一 */}
