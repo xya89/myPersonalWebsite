@@ -60,19 +60,29 @@ export default function ImageGallery() {
                     <div key={index}
                         className={`
                         relative w-full h-96 object-cover
-                        transition-opactiy ease-in duration-700 ${isVisibleThis ? "opacity-100" : "opacity-0"}
                         `}
-                        ref={refAll}
-                    >  {/*not sure if this transition works on card image */}
-                        <Image
+                    >
+                        <div style={{ paddingTop: '75%' /* 4:3 aspect ratio */ }}>
+                            <Image
+                                src={img.src}
+                                alt={img.alt}
+                                layout="fill"
+                                objectFit="cover"
+                                onClick={() => handleImageClick(img)}
+                                loading="lazy"
+                            />
+                        </div>
+                        {/* <Image
                             src={img.src}
                             alt={img.alt}
-                            fill={true}
+                            // fill={true}
                             sizes="50%"
-                            style={{ aspectRatio: '4/3', objectFit: "cover", width: '100%' }}
+                            width={800}
+                            height={600}
+                            style={{ aspectRatio: '4/3', objectFit: "cover", }}
                             onClick={() => handleImageClick(img)}
                             loading="lazy"
-                        />
+                        /> */}
                     </div>
                 ))}
             </div>
@@ -90,14 +100,23 @@ export default function ImageGallery() {
                             &times;
                         </button>
                         <div className="flex relative mt-6 w-full lg:h-[85%] h-[70%]">
-                            <Image
+                            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                                <Image
+                                    src={selectedImage.src}
+                                    alt={selectedImage.alt}
+                                    layout="fill"
+                                    objectFit="contain"
+                                    loading="lazy"
+                                />
+                            </div>
+                            {/* <Image
                                 src={selectedImage.src}
                                 alt={selectedImage.alt}
                                 fill={true}
                                 sizes="100%"
                                 style={{ objectFit: "contain", display: "block" }}
                                 priority
-                            />
+                            /> */}
                         </div>
 
                         {/* 单页照片标题 - 统一 */}
