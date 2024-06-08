@@ -5,20 +5,18 @@ summary: '一些架设本网站的技术总结'
 cover: '/blog/post_image/porfolio-summary-2024.png'
 ---
 ## 背景
-自从大三开始就有了想搭建一个个人网站的想法与尝试。在这之前，我只知道Markdown可以看成HTML的子集，平日里也只会在R Markdown里写报告交作业，除此之外
-对网页设计还就那个一无所知。
+自从大三开始,我就萌生了搭建个人网站的想法，并进行了尝试。在这之前，我只知道Markdown可以看成HTML的子集，平日里也只会在R Markdown里写报告交作业，除此之外对网页设计还就那个一无所知。
 
-大三暑假，我开始试图研究如何从零写一个自己的网站，<span className="relative group"><span className="bg-black text-black group-hover:text-white transition-colors duration-300">但是因为种种原因中道崩殂了</span><span className="absolute top-0 transform translate-x-20 -translate-y-10 left-0 bg-yellow-300 text-black hidden group-hover:block pointer-events-none z-10">你知道的太多了</span></span>。
+大三暑假，我开始尝试从零构建一个属于自己的网站，<span className="relative group"><span className="bg-black text-black group-hover:text-white transition-colors duration-300">但是因为种种原因中道崩殂了</span><span className="absolute top-0 transform translate-x-20 -translate-y-10 left-0 bg-yellow-300 text-black hidden group-hover:block pointer-events-none z-10">你知道的太多了</span></span>。
 直到最近一些机缘巧合，我有了时间开始每日25小时高强度网上冲浪，看着各座强者做出的劲，霸，强的网站，自己尝试搭建的想法又浮出水面。
 于是我开始研究当下的流行的技术。
 
-由于在工作中耳濡目染，我得知了如今市面上有非常多的低代码甚至无代码（codeless）的网页编辑器，例如Wordpress、Wix、Squarespace等。这些平台提供一站式网站建设到部署的服务。
-此类服务功能强大，可以让使用者不写一行代码快速上线一个精致的现代网站; 不过，在我看来这些并不一定是一个长期的解决方案，纠结于平台和服务只是因为我并不懂得前端技术；于是我下单决心
-开始学期前端技术，用不那么预先设定好的工具和框架做一个真正属于我自己的网页。这好比是煮一碗排骨面，我大可以在超市购买现成的蒜蓉排骨熟食、蔬菜和速食面快速做出一碗美味的小吃，但是我的目标是
-从购买生肉、研究配料开始从头做一碗属于自己的味道的排骨面。<span className="relative group"><span className="bg-black text-black group-hover:text-white transition-colors duration-300">我老想吃排骨了，最近特别想吃排骨，可惜排骨太贵了</span><span className="absolute top-0 transform translate-x-10 -translate-y-10 left-0 bg-yellow-300 text-black hidden group-hover:block pointer-events-none z-10">后面忘了</span></span>
+在工作中耳濡目染，我了解到如今市面上有许多低代码甚至无代码（codeless）的网页编辑器，例如Wordpress、Wix、Squarespace等。这些平台提供一站式网站建设到部署的服务。
+这些服务功能强大，可以让用户无需写一行代码，快速上线一个精美的现代网站。不过，在我看来，这些并不是长期的解决方案。纠结于平台和服务只是因为我不懂前端技术；于是，我决心开始学习前端技术，用更灵活的工具和框架制作一个真正属于我自己的网页。
+这就好比煮一碗排骨面，我大可以在超市购买现成的蒜蓉排骨熟食、蔬菜和速食面快速做出一碗美味的小吃，但是我的目标是从购买生肉、研究配料开始,从头做一碗属于自己的味道的排骨面。<span className="relative group"><span className="bg-black text-black group-hover:text-white transition-colors duration-300">我老想吃排骨了，最近特别想吃排骨，可惜排骨太贵了</span><span className="absolute top-0 transform translate-x-10 -translate-y-10 left-0 bg-yellow-300 text-black hidden group-hover:block pointer-events-none z-10">后面忘了</span></span>
 
-那么要如何开始呢？查阅资料后我了解到了现成的JS或者TS框架（如React，Vue等），这些框架使得代码模块化，组件化，在开发，设计，和维护上更加便捷，也提供了更多的可编程性。我最终选择了<span className="font-bold text-emerald-500 dark:text-pink-500">[NextJs](https://nextjs.org/docs)</span>，
-一个基于React的脚手架，对于静态网站来说，其原理是在构建时预渲染页面，并生成静态HTML文件，这些文件可以直接部署在静态文件服务器上，从而提高性能和安全性。NextJS技能提供现代单页应用的用户体验，
+那么要如何开始呢？通过查阅资料，我了解到现成的JS或TS框架（如React、Vue等）。这些框架使得代码模块化、组件化，使开发、设计和维护更加便捷，也提供了更多的可编程性。我最终选择了<span className="font-bold text-emerald-500 dark:text-pink-500">[NextJs](https://nextjs.org/docs)</span>，
+一个基于React的脚手架。对于静态网站来说，其原理是在构建时预渲染页面，并生成静态HTML文件，这些文件可以直接部署在静态文件服务器上，从而提高性能和安全性。NextJS技能提供现代单页应用的用户体验，
 也能优化SEO和性能，是一个灵活且强大的脚手架。
 
 ## 技术栈
