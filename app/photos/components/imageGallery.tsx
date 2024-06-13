@@ -71,6 +71,7 @@ export default function ImageGallery() {
                                 onClick={() => handleImageClick(img)}
                                 loading="lazy"
                                 className="rounded-xl shadow-md"
+                                onContextMenu={(e) => e.preventDefault()}
                             />
                         </div>
                     </div>
@@ -97,6 +98,7 @@ export default function ImageGallery() {
                                     layout="fill"
                                     objectFit="contain"
                                     loading="lazy"
+                                    onContextMenu={(e) => e.preventDefault()}
                                 />
                             </div>
                         </div>

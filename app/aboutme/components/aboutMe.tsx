@@ -30,7 +30,9 @@ export function AboutMe() {
                     fill={true}
                     style={{ aspectRatio: '1/1', objectFit: "cover" }}
                     sizes='50%'
-                    priority={true} />
+                    priority={true}
+                    onContextMenu={(e) => e.preventDefault()}
+                />
             </div>
             <div className="flex justify-between items-start">
                 <h1 className="mb-8 mt-8 text-2xl font-semibold tracking-tighter">
