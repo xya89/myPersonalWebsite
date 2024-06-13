@@ -41,16 +41,6 @@ export default function ImageGallery() {
         };
     }, [selectedImage]);
 
-    useEffect(() => {
-        const preventDefault = (e) => e.preventDefault();
-
-        document.addEventListener('touchstart', preventDefault, { passive: false });
-
-        return () => {
-            document.removeEventListener('touchstart', preventDefault);
-        };
-    }, []);
-
     const handleImageClick = (img) => {
         setSelectedImage(img);
     }
