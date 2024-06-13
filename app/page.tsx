@@ -26,7 +26,7 @@ export default function Home() {
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={300}
-        color={{ r: 255, g: 0, b: 0 }}
+        color={{ r: 255, g: 10, b: 10 }}
       />
       <FadeText
         diyStyle="

@@ -70,6 +70,7 @@ export default function ImageGallery() {
                                 objectFit="cover"
                                 onClick={() => handleImageClick(img)}
                                 loading="lazy"
+                                className="rounded-xl shadow-md"
                             />
                         </div>
                     </div>

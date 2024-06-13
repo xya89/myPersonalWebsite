@@ -27,6 +27,8 @@ export function VideoGallery() {
                         width="1620"
                         height="1080"
                         src={vid.src}
+                        pictureInPictureToggle={true}
+                        className="rounded-xl"
                     />
                 </div>
             ))}
