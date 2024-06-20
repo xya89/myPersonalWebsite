@@ -4,6 +4,7 @@ import React from "react";
 import { useIsVisible } from "app/utils/isVisible";
 import Particles from "./components/particles";
 import { FadeText } from "app/utils/fadehovertext"
+import { CurrentDateTime } from "app/utils/currentDateTime";
 import { useRef } from "react";
 
 const navigation = [
@@ -28,7 +29,21 @@ export default function Home() {
         quantity={300}
         color={{ r: 255, g: 10, b: 10 }}
       />
-      <FadeText
+
+
+      {/* <FadeText
+      diyStyle={"font-serif text-7xl font-bold"}
+      defaultText={"時に、西暦2024年"}
+      hoverText={""}
+      duration={300}
+      enableClicked={true}/> */}
+      <CurrentDateTime
+      diyStyle="font-serif text-7xl font-bold"
+      year={true}
+      hours={true}
+      minutes={true}
+      seconds={true}/>
+      {/* <FadeText
         diyStyle="
         z-10 text-6xl sm:text-6xl md:text-8xl text-center break-normal mb-4
         bg-gradient-to-tr inline-block text-transparent bg-clip-text
@@ -38,10 +53,10 @@ export default function Home() {
         hoverText={"なんで春日影やったの!?"}
         duration={300}
         enableClicked={true}
-      />
+      /> */}
       <div className="hidden w-screen h-px md:block bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
 
-      <FadeText
+      {/* <FadeText
         diyStyle="
         z-10 mt-8 text-lg sm:text-xl md:text-2xl text-center break-normal
         bg-gradient-to-tl inline-block text-transparent bg-clip-text
@@ -51,7 +66,7 @@ export default function Home() {
         hoverText={"春日影はやらないから"}
         duration={300}
         enableClicked={true}
-      />
+      /> */}
 
       <div className="my-16 text-center ">
         <nav className="my-16 ">
