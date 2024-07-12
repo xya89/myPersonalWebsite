@@ -10,9 +10,9 @@ export default function Page() {
       ">
         My Blog
       </h1>
-      <p className='text-lg leading-relaxed my-4
+      <p className='text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600
       '>
-        Blog with multiple topics...
+        前面忘了，中间忘了，后面忘了
       </p>
       <BlogPosts />
     </section>

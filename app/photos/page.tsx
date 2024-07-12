@@ -12,7 +12,7 @@ export default async function Page() {
                 Photo
             </h1>
             <FadeText
-                diyStyle={'text-4xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600 duration-350 '}
+                diyStyle={'text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600 duration-350 '}
                 defaultText={'その一瞬を、永遠に'}
                 hoverText={'すべての過去は虚無に帰した。やがて涙が雨に消えるように。'}
                 duration={300}
