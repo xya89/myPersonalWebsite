@@ -14,7 +14,7 @@ export default function Page() {
             </h1>
             <FadeText
                 diyStyle={'text-2xl leading-relaxed mt-2 mb-10 w-fit font-bold'}
-                defaultText={'Some random videos i took on my phone, hosted and delivered on/via cloudinary'}
+                defaultText={'Some videos i took and made, hosted and delivered on/via multiple sauce 💀 '}
                 hoverText={'still in construction...'}
                 duration={300}
                 enableClicked={true}
