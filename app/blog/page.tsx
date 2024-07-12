@@ -12,7 +12,7 @@ export default function Page() {
       </h1>
       <p className='text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600
       '>
-        前面忘了，中间忘了，后面忘了
+        我试图记录一些可能会忘记的事情
       </p>
       <BlogPosts />
     </section>

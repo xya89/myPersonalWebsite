@@ -13,7 +13,7 @@ export default async function Page() {
             </h1>
             <FadeText
                 diyStyle={'text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600 duration-350 '}
-                defaultText={'その一瞬を、永遠に'}
+                defaultText={'偷走时间的一帧'}
                 hoverText={'すべての過去は虚無に帰した。やがて涙が雨に消えるように。'}
                 duration={300}
                 enableClicked={true}
