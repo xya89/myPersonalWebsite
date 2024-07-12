@@ -53,10 +53,10 @@ export function Navbar() {
         className='fixed top-0 z-50 w-full fade'
       >
         <div
-          className={`lg:fixed lg:top-0 w-full backdrop-blur duration-200 border-b 
+          className={`lg:fixed lg:top-0 w-full backdrop-blur dark:backdrop-brightness-70 duration-200 border-b 
         ${isIntersecting
               ? "bg-zinc-900/0 border-transparent"
-              : "bg-zinc-900/500 border-zinc-800"}`}>
+              : "bg-zinc-900/500 border-zinc-800 dark:backdrop-grayscale"}`}>
           {/* toggle drop down menu */}
           <div className="flex justify-between items-center px-4 py-2 lg:hidden">
             <button
@@ -83,6 +83,8 @@ export function Navbar() {
                 : 'hidden lg:block'} 
             lg:block container flex flex-row items-center pr-10
             `}>
+
+            {/* on collapsed or small screens */}
             <div
               ref={refMiniBar}
               className={`lg:hidden space-y-2
@@ -101,6 +103,8 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
+
+            {/* on large screens */}
             <div className="hidden lg:flex lg:items-center lg:space-x-4
             bg-gradient-to-b text-transparent bg-clip-text
             from-zinc-900 via-zinc-800 to-stone-500.50
