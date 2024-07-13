@@ -17,6 +17,7 @@ export default function ImageGallery() {
 
     const [selectedImage, setSelectedImage] = useState(null as any);
     const [shuffledImage, setShuffleImages] = useState([] as any);
+    const [activeTags, setActiveTags] = useState([] as any);
 
     const refAll = useRef(null);
     const isVisibleThis = useIsVisible(refAll)
@@ -49,14 +50,45 @@ export default function ImageGallery() {
         setSelectedImage(null);
     }
 
+    const toggleTag = (tag) => {
+        setActiveTags(preTags =>
+            preTags.includes(tag)
+                ? preTags.filter(t => t !== tag)
+                : [...preTags, tag]
+        );
+    }
+
+
+    const filteredImages = activeTags.length === 0
+        ? shuffledImage
+        : shuffledImage.filter(img =>
+            img.country && activeTags.every(tag => img.country.includes(tag))
+        );
+
+
     return (
         <section ref={refAll}
             className={`transition-opactiy ease-in duration-700 ${isVisibleThis ? "opacity-100" : "opacity-0"}`}>
+
+            {/* tags */}
+            <div className="mb-4">
+                {["Japan", "film"].map(tag => (
+                    <button
+                        key={tag}
+                        onClick={() => toggleTag(tag)}
+                        className={`mr-2 mb-2 px-3 py-1 rounded-full ${activeTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"}`}
+                    >
+                        {tag}
+                    </button>
+                ))}
+            </div>
+
+            {/* Main */}
             <div
                 className={`grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 justify-normal 
                 ${selectedImage ? 'blur-md grayscale brightness-50' : ''}
             `}>
-                {shuffledImage.map((img, index) => (
+                {filteredImages.map((img, index) => (
                     <div key={index}
                         className={`
                         relative w-full h-96 object-cover
