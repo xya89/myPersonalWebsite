@@ -11,10 +11,15 @@ export default async function Page() {
             ">
                 Photo
             </h1>
+            <p
+                className="text-3xl leading-relaxed mt-2 w-fit font-bold">
+                「行于流逝的岸」
+            </p>
             <FadeText
-                diyStyle={'text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600 duration-350 '}
-                defaultText={'偷走时间的一帧'}
-                hoverText={'すべての過去は虚無に帰した。やがて涙が雨に消えるように。'}
+                diyStyle={'text-xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600 duration-350 '}
+                defaultText={'偷走了时间的一帧,可是我逐渐分不清记忆的真假'}
+                // hoverText={'すべての過去は虚無に帰した。やがて涙が雨に消えるように。'}
+                hoverText={'所有的过往终将归于虚无，如同泪水消失在雨中'}
                 duration={300}
                 enableClicked={true}
             />

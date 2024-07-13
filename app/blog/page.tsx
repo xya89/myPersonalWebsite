@@ -8,7 +8,7 @@ export default function Page() {
       from-zinc-900 via-zinc-800 to-stone-500
       dark:from-zinc-300 dark:via-zinc-200 dark:to-stone-500
       ">
-        My Blog
+        Blog
       </h1>
       <p className='text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600
       '>
