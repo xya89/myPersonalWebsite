@@ -25,7 +25,7 @@ export function AboutMe() {
             `}>
                 {/* Headshot photos */}
                 <Image
-                    src={"/profile/Profile_pic_5.jpg"}
+                    src={"/profile/profile_pic_1.png"}
                     alt='Headshot'
                     fill={true}
                     style={{ aspectRatio: '1/1', objectFit: "cover" }}

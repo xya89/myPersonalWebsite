@@ -17,7 +17,7 @@ export default function ImageGallery() {
 
     const [selectedImage, setSelectedImage] = useState(null as any);
     const [shuffledImage, setShuffleImages] = useState([] as any);
-    const [activeTags, setActiveTags] = useState([] as any);
+    const [activeTags, setActiveTags] = useState(["B&W"]);
 
     const refAll = useRef(null);
     const isVisibleThis = useIsVisible(refAll)
@@ -62,7 +62,7 @@ export default function ImageGallery() {
     const filteredImages = activeTags.length === 0
         ? shuffledImage
         : shuffledImage.filter(img =>
-            img.country && activeTags.every(tag => img.country.includes(tag))
+            img.tags && activeTags.every(tag => img.tags.includes(tag))
         );
 
 
@@ -71,17 +71,28 @@ export default function ImageGallery() {
             className={`transition-opactiy ease-in duration-700 ${isVisibleThis ? "opacity-100" : "opacity-0"}`}>
 
             {/* tags */}
-            <div className="mb-4">
-                {["Japan", "film"].map(tag => (
-                    <button
-                        key={tag}
-                        onClick={() => toggleTag(tag)}
-                        className={`mr-2 mb-2 px-3 py-1 rounded-full ${activeTags.includes(tag) ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-800"}`}
-                    >
-                        {tag}
-                    </button>
-                ))}
+            <div className="w-full flex justify-center mb-4">
+                <div className="w-full max-w-md flex justify-center items-center rounded-full p-0.5
+                bg-stone-50 dark:bg-stone-900">
+                    <div className="flex flex-wrap gap-1 w-full">
+                        {["Digital", "Film", "B&W", "Color"].map(tag => (
+                            <button
+                                key={tag}
+                                onClick={() => toggleTag(tag)}
+                                className={`flex-1 px-4 py-2 rounded-full transition duration-300 ease-in-out 
+                                    font-semibold text-md
+                                    ${activeTags.includes(tag)
+                                        ? "bg-red-600 text-white"
+                                        : "bg-transparent text-stone-800 hover:text-stone-600 dark:text-amber-50 dark:hover:text-white"
+                                    }`}
+                            >
+                                {tag}
+                            </button>
+                        ))}
+                    </div>
+                </div>
             </div>
+
 
             {/* Main */}
             <div
@@ -138,7 +149,11 @@ export default function ImageGallery() {
                         {/* 单页照片标题 - 统一 */}
                         <div className="items-center justify-center flex">
                             <FadeText
-                                diyStyle="text-center lg:text-3xl text-2xl w-fit mt-2 mb-2 hover:text-red-600 font-bold duration-150"
+                                diyStyle="text-center lg:text-3xl text-2xl w-fit mt-2 mb-2 
+                                text-transparent bg-clip-text bg-gradient-to-b
+                                from-zinc-800 via-zinc-600 to-stone-600
+                                dark:from-zinc-400 dark:via-zinc-100 dark:to-stone-300
+                                hover:text-red-600 font-bold duration-150"
                                 defaultText={'无题'}
                                 hoverText={'答案并不重要'}
                                 duration={300}

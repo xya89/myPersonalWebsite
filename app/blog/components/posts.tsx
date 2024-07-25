@@ -42,7 +42,7 @@ export function BlogPosts() {
                 <p className="text-base text-gray-700 dark:text-gray-300 mb-4 w-full truncate">
                   {post.metadata.summary}
                 </p>
-                <p className="text-blue-500 hover:underline w-full">Read more</p>
+                <p className="text-blue-500 dark:text-red-500 hover:underline w-full">Read more</p>
               </div>
             </div>
           </Link>

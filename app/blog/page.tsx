@@ -1,4 +1,5 @@
 import { BlogPosts } from 'app/blog/components/posts'
+import { FadeText } from 'app/utils/fadehovertext'
 
 export default function Page() {
   return (
@@ -10,10 +11,12 @@ export default function Page() {
       ">
         Blog
       </h1>
-      <p className='text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600
-      '>
-        我试图记录一些可能会忘记的事情
+
+      <p
+        className="text-3xl leading-relaxed mt-2 w-fit font-bold mb-10 text-stone-800 dark:text-amber-50">
+        「记忆的质料」
       </p>
+
       <BlogPosts />
     </section>
   )

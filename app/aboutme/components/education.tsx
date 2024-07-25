@@ -59,7 +59,7 @@ export function Education() {
                                 </Link>
                             </h1>
                             {/* Education Achievment */}
-                            <div className="text-sky-500 text-center mb-2 lg:mb-0 text-sm">
+                            <div className="text-sky-500 dark:text-red-500 text-center mb-2 lg:mb-0 text-sm">
                                 {Array.isArray(edu.title) ? (
                                     edu.title.map((title, idx) => (
                                         <p key={idx}>{title}</p>

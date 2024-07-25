@@ -12,13 +12,11 @@ export default function Page() {
             ">
                 Video
             </h1>
-            <FadeText
-                diyStyle={'text-3xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600'}
-                defaultText={'Some videos i took and made, hosted and delivered on/via multiple sauce 💀 '}
-                hoverText={'still in construction...'}
-                duration={300}
-                enableClicked={true}
-            />
+
+            <p
+                className="text-3xl leading-relaxed mt-2 w-fit font-bold mb-10 text-stone-800 dark:text-amber-50">
+                「梦应归于何处」
+            </p>
 
             <VideoGallery />
 

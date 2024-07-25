@@ -11,22 +11,19 @@ export default async function Page() {
             ">
                 Photo
             </h1>
-            <p
-                className="text-3xl leading-relaxed mt-2 w-fit font-bold">
-                「行于流逝的岸」
-            </p>
+
             <FadeText
-                diyStyle={'text-xl leading-relaxed mt-2 mb-10 w-fit font-bold hover:text-red-600 duration-350 '}
-                defaultText={'偷走了时间的一帧,却逐渐分不清记忆的真假'}
-                // hoverText={'すべての過去は虚無に帰した。やがて涙が雨に消えるように。'}
+                diyStyle={'text-3xl leading-relaxed mt-2 w-fit font-bold mb-10 text-stone-800 dark:text-amber-50 hover:text-red-600 duration-350 '}
+                defaultText={'「行于流逝的岸」'}
                 hoverText={'所有的过往终将归于虚无，如同泪水消失在雨中'}
                 duration={300}
                 enableClicked={true}
             />
+
             <div
                 className="flex justify-between">
                 <div
-                    className="items-left text-large leading-relaxed mb-10 text-left">
+                    className="items-left text-large leading-relaxed mb-5 text-left">
                     My Watermarks:
                     <ul className="text-sm text-gray-700 dark:text-gray-400">
                         <li>Edwardyoung photography</li>
@@ -34,7 +31,7 @@ export default async function Page() {
                     </ul>
                 </div>
                 <div
-                    className="items-right text-large leading-relaxed mb-10 text-right">
+                    className="items-right text-large leading-relaxed mb-5 text-right">
                     My Gears
                     <ul className="text-sm text-gray-700 dark:text-gray-400">
                         <li>Sony ILCE-7M3</li>

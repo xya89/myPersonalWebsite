@@ -19,18 +19,10 @@ export function VideoGallery() {
             {videoSource.map((vid, index) => (
                 <div>
 
-                    <p className="text-3xl mb-2">
+                    <p className="text-3xl mb-2 text-stone-800 dark:text-amber-50">
                         {vid.Title}
                     </p>
-                    {/* 
-                    <CldVideoPlayer
-                        key={index}
-                        width="1620"
-                        height="1080"
-                        src={vid.src}
-                        pictureInPictureToggle={true}
-                        className="rounded-xl"
-                    /> */}
+
                     <div
                         className="mb-20 relative"
                         style={{ paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%' }}

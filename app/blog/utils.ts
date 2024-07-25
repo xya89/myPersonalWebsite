@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   cover?: string
+  tags?: string
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -88,3 +89,8 @@ export function formatDate(date: string, includeRelative = false) {
 
   return `${fullDate} (${formattedDate})`
 }
+
+
+
+
+
