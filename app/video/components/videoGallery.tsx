@@ -27,14 +27,14 @@ export function VideoGallery() {
                         className="mb-20 relative"
                         style={{ paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%' }}
                     >
-                        <iframe
+                        <video
                             src={vid.src}
+                            controls
                             width="1280"
                             height="720"
-                            allowFullScreen
                             style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                         >
-                        </iframe>
+                        </video>
                     </div>
 
 
